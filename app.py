@@ -41,34 +41,57 @@ if 'center' not in st.session_state:
 m = folium.Map(location=st.session_state.center, zoom_start=st.session_state.zoom, tiles='cartodbpositron')
 Fullscreen().add_to(m)
 
-# Marker Logic (your exact colab logic)
-for record in data:
-    if model_filter != "Show All" and record["model_source"] != model_filter:
+# Marker Logic
+for loc_name, details in grouped_locations.items():
+    lat, lon = details["coordinates"]
+    
+    # 1. Bounding Box Filter (Exclude global noise)
+    if not (1.0 <= lat <= 5.0 and 109.0 <= lon <= 116.0):
         continue
-    
-    # Matching your requested popup interface EXACTLY
-    linked = record['linked_entities']
-    display_hist = record['historical_name'] if record['historical_name'] != record['normalized_name'] else "N/A (Unchanged)"
-    
+
+    # 2. Carousel Logic (Building slides for each mention)
+    slides = ""
+    for i, mnt in enumerate(details["mentions"]):
+        display = "block" if i == 0 else "none"
+        # Using the exact fields from your Colab script
+        linked = mnt['linked']
+        slides += f"""
+        <div class='slide-{loc_name.replace(' ', '_')}' style='display: {display}; padding: 5px;'>
+            <p style='font-size: 11px;'><b>Source:</b> {mnt['metadata']}</p>
+            <p style='font-size: 12px;'><i>"{mnt['text']}"</i></p>
+            <p style='font-size: 10px;'>Slide {i+1} / {len(details['mentions'])}</p>
+        </div>
+        """
+
+    # 3. Popup HTML (Exact Colab interface + Carousel controls)
     popup_html = f"""
-    <b>ID:</b> {record['location_id']}<br>
-    <b>Current Name:</b> {record['normalized_name']}<br>
-    <b>Historical Name:</b> {display_hist}<br>
-    <b>Model:</b> {record['model_source']}<br>
-    <hr>
-    <b>People:</b> {', '.join(linked.get('PERSON', [])) if linked.get('PERSON') else 'None'}<br>
-    <b>Dates:</b> {', '.join(linked.get('DATE', [])) if linked.get('DATE') else 'None'}<br>
-    <b>Orgs:</b> {', '.join(linked.get('ORGANISATION', [])) if linked.get('ORGANISATION') else 'None'}<br>
-    <b>Events:</b> {', '.join(linked.get('EVENT', [])) if linked.get('EVENT') else 'None'}<br>
-    <hr>
-    <i>"{record['snippet_text']}"</i><br><br>
-    <small>Source: {record['source_metadata']}</small>
+    <div style='width: 300px; font-family: sans-serif;'>
+        <b>Historical Name:</b> {loc_name}<br>
+        <hr style="margin: 5px 0;">
+        <div id='slideshow-{loc_name.replace(' ', '_')}'>{slides}</div>
+        <div style='text-align: center; margin-top: 5px;'>
+            <button onclick="changeSlide(-1, '{loc_name.replace(' ', '_')}')">❮ Prev</button>
+            <button onclick="changeSlide(1, '{loc_name.replace(' ', '_')}')">Next ❯</button>
+        </div>
+    </div>
+    <script>
+    function changeSlide(n, id) {{
+        let slides = document.getElementsByClassName('slide-'+id);
+        let current = 0;
+        for(let i=0; i<slides.length; i++) {{
+            if(slides[i].style.display === 'block') current = i;
+            slides[i].style.display = 'none';
+        }}
+        let next = (current + n + slides.length) % slides.length;
+        slides[next].style.display = 'block';
+    }}
+    </script>
     """
 
     folium.Marker(
-        location=record['coordinates'],
-        popup=folium.Popup(popup_html, max_width=300),
-        icon=folium.Icon(color="blue" if record['model_source'] == "LSTM" else "red", icon="info-sign")
+        location=[lat, lon],
+        popup=folium.Popup(popup_html, max_width=350),
+        icon=folium.Icon(color="blue" if details['model_source'] == "LSTM" else "red", icon="info-sign")
     ).add_to(m)
 
 # 6. RENDER

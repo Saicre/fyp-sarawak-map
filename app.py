@@ -25,19 +25,41 @@ def load_data():
 
 data = load_data()
 
-# 4. MAP STATE MANAGEMENT
-# We use a button to reset the center coordinates
+# 4. DATA GROUPING (Fixed: Grouping logic added here)
+grouped_locations = {}
+for record in data:
+    if model_filter != "Show All" and record["model_source"] != model_filter:
+        continue
+    
+    loc_name = record["historical_name"]
+    if loc_name not in grouped_locations:
+        grouped_locations[loc_name] = {
+            "coordinates": record["coordinates"], 
+            "model_source": record["model_source"], 
+            "mentions": []
+        }
+    
+    grouped_locations[loc_name]["mentions"].append({
+        "metadata": record["source_metadata"],
+        "text": record["snippet_text"],
+        "linked": record["linked_entities"]
+    })
+
+# 5. MAP STATE MANAGEMENT
+if 'map_key' not in st.session_state:
+    st.session_state.map_key = 0
+
 if st.button("📍 Recenter Map to Sarawak"):
     st.session_state.center = [2.55, 113.0]
     st.session_state.zoom = 7
+    st.session_state.map_key += 1
     st.rerun()
 
-# Initialize session state if not set
 if 'center' not in st.session_state:
     st.session_state.center = [2.55, 113.0]
     st.session_state.zoom = 7
 
-# 5. BUILD MAP
+# 6. BUILD MAP
 m = folium.Map(location=st.session_state.center, zoom_start=st.session_state.zoom, tiles='cartodbpositron')
 Fullscreen().add_to(m)
 
@@ -45,15 +67,14 @@ Fullscreen().add_to(m)
 for loc_name, details in grouped_locations.items():
     lat, lon = details["coordinates"]
     
-    # 1. Bounding Box Filter (Exclude global noise)
+    # Bounding Box Filter
     if not (1.0 <= lat <= 5.0 and 109.0 <= lon <= 116.0):
         continue
 
-    # 2. Carousel Logic (Building slides for each mention)
+    # Carousel Logic
     slides = ""
     for i, mnt in enumerate(details["mentions"]):
         display = "block" if i == 0 else "none"
-        # Using the exact fields from your Colab script
         linked = mnt['linked']
         slides += f"""
         <div class='slide-{loc_name.replace(' ', '_')}' style='display: {display}; padding: 5px;'>
@@ -63,7 +84,6 @@ for loc_name, details in grouped_locations.items():
         </div>
         """
 
-    # 3. Popup HTML (Exact Colab interface + Carousel controls)
     popup_html = f"""
     <div style='width: 300px; font-family: sans-serif;'>
         <b>Historical Name:</b> {loc_name}<br>
@@ -94,5 +114,12 @@ for loc_name, details in grouped_locations.items():
         icon=folium.Icon(color="blue" if details['model_source'] == "LSTM" else "red", icon="info-sign")
     ).add_to(m)
 
-# 6. RENDER
-st_folium(m, width=1200, height=600, center=st.session_state.center, zoom=st.session_state.zoom)
+# 7. RENDER
+st_folium(
+    m, 
+    width=1200, 
+    height=600, 
+    center=st.session_state.center, 
+    zoom=st.session_state.zoom,
+    key=f"map_{st.session_state.map_key}"
+)

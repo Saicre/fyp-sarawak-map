@@ -2,124 +2,90 @@ import streamlit as st
 import json
 import folium
 from streamlit_folium import st_folium
-from folium.plugins import Fullscreen
 
-# 1. PAGE SETUP
-st.set_page_config(page_title="Sarawak Gazette NLP Map", layout="wide")
+st.set_page_config(layout="wide")
 
-# Custom Navbar
-st.markdown("""
-    <div style="background-color: #f8f9fa; padding: 15px; border-bottom: 2px solid #ddd; margin-bottom: 20px;">
-        <h2 style="margin:0;">🗺️ Sarawak Gazette Historical Gazetteer</h2>
-    </div>
-""", unsafe_allow_html=True)
-
-# 2. FILTERING
-model_filter = st.radio("Filter by Model Source:", ["Show All", "LSTM", "BiLSTM-CRF"], horizontal=True)
-
-# 3. DATA LOADING
+# 1. LOAD DATA
 @st.cache_data
 def load_data():
     with open('sarawak_gazetteer.json', 'r') as file:
         return json.load(file)
 
-data = load_data()
+database_records = load_data()
 
-# 4. DATA GROUPING (Fixed: Grouping logic added here)
-grouped_locations = {}
-for record in data:
-    if model_filter != "Show All" and record["model_source"] != model_filter:
-        continue
-    
-    loc_name = record["historical_name"]
-    if loc_name not in grouped_locations:
-        grouped_locations[loc_name] = {
-            "coordinates": record["coordinates"], 
-            "model_source": record["model_source"], 
-            "mentions": []
-        }
-    
-    grouped_locations[loc_name]["mentions"].append({
-        "metadata": record["source_metadata"],
-        "text": record["snippet_text"],
-        "linked": record["linked_entities"]
-    })
+# 2. GROUPING DATA (Crucial for carousel)
+grouped_data = {}
+for record in database_records:
+    loc = record['historical_name']
+    if loc not in grouped_data:
+        grouped_data[loc] = []
+    grouped_data[loc].append(record)
 
-# 5. MAP STATE MANAGEMENT
-if 'map_key' not in st.session_state:
-    st.session_state.map_key = 0
+# 3. MAP SETUP
+m = folium.Map(location=[2.55, 113.0], zoom_start=6, tiles='cartodbpositron')
+lstm_layer = folium.FeatureGroup(name="LSTM Predictions (Blue)")
+bilstm_layer = folium.FeatureGroup(name="BiLSTM-CRF Predictions (Red)")
 
-if st.button("📍 Recenter Map to Sarawak"):
-    st.session_state.center = [2.55, 113.0]
-    st.session_state.zoom = 7
-    st.session_state.map_key += 1
-    st.rerun()
+def format_list(lst):
+    return ', '.join(lst) if lst else 'None'
 
-if 'center' not in st.session_state:
-    st.session_state.center = [2.55, 113.0]
-    st.session_state.zoom = 7
-
-# 6. BUILD MAP
-m = folium.Map(location=st.session_state.center, zoom_start=st.session_state.zoom, tiles='cartodbpositron')
-Fullscreen().add_to(m)
-
-# Marker Logic
-for loc_name, details in grouped_locations.items():
-    lat, lon = details["coordinates"]
+# 4. MARKER LOOP
+for loc, records in grouped_data.items():
+    coords = records[0]['coordinates']
     
     # Bounding Box Filter
-    if not (1.0 <= lat <= 5.0 and 109.0 <= lon <= 116.0):
+    if not (1.0 <= coords[0] <= 5.0 and 109.0 <= coords[1] <= 116.0):
         continue
 
-    # Carousel Logic
+    # Build Carousel Slides
     slides = ""
-    for i, mnt in enumerate(details["mentions"]):
+    for i, r in enumerate(records):
         display = "block" if i == 0 else "none"
-        linked = mnt['linked']
         slides += f"""
-        <div class='slide-{loc_name.replace(' ', '_')}' style='display: {display}; padding: 5px;'>
-            <p style='font-size: 11px;'><b>Source:</b> {mnt['metadata']}</p>
-            <p style='font-size: 12px;'><i>"{mnt['text']}"</i></p>
-            <p style='font-size: 10px;'>Slide {i+1} / {len(details['mentions'])}</p>
+        <div class='slide-{loc.replace(' ', '_')}' style='display: {display}; border-top: 1px solid #ccc; padding: 5px;'>
+            <i>"{r['snippet_text']}"</i><br>
+            <small>Source: {r['source_metadata']}</small>
         </div>
         """
 
+    # Combine Static Colab Info + Carousel
+    r = records[0]
+    display_hist = r['historical_name'] if r['historical_name'] != r['normalized_name'] else "N/A (Unchanged)"
+    
     popup_html = f"""
-    <div style='width: 300px; font-family: sans-serif;'>
-        <b>Historical Name:</b> {loc_name}<br>
-        <hr style="margin: 5px 0;">
-        <div id='slideshow-{loc_name.replace(' ', '_')}'>{slides}</div>
-        <div style='text-align: center; margin-top: 5px;'>
-            <button onclick="changeSlide(-1, '{loc_name.replace(' ', '_')}')">❮ Prev</button>
-            <button onclick="changeSlide(1, '{loc_name.replace(' ', '_')}')">Next ❯</button>
-        </div>
+    <div style='width: 300px;'>
+        <b>ID:</b> {r['location_id']}<br>
+        <b>Current Name:</b> {r['normalized_name']}<br>
+        <b>Historical Name:</b> {display_hist}<br>
+        <b>Model:</b> {r['model_source']}<br>
+        <hr>
+        <b>People:</b> {format_list(r['linked_entities'].get('PERSON', []))}<br>
+        <b>Dates:</b> {format_list(r['linked_entities'].get('DATE', []))}<br>
+        <b>Orgs:</b> {format_list(r['linked_entities'].get('ORGANISATION', []))}<br>
+        <b>Events:</b> {format_list(r['linked_entities'].get('EVENT', []))}<br>
+        <div id='ss-{loc.replace(' ', '_')}'>{slides}</div>
+        <button onclick="plus(-1, '{loc.replace(' ', '_')}')">❮</button>
+        <button onclick="plus(1, '{loc.replace(' ', '_')}')">❯</button>
     </div>
     <script>
-    function changeSlide(n, id) {{
-        let slides = document.getElementsByClassName('slide-'+id);
-        let current = 0;
-        for(let i=0; i<slides.length; i++) {{
-            if(slides[i].style.display === 'block') current = i;
-            slides[i].style.display = 'none';
-        }}
-        let next = (current + n + slides.length) % slides.length;
-        slides[next].style.display = 'block';
+    function plus(n, id) {{
+        let s = document.getElementsByClassName('slide-'+id);
+        let c = 0;
+        for(let i=0; i<s.length; i++) {{ if(s[i].style.display === 'block') c = i; s[i].style.display = 'none'; }}
+        let next = (c + n + s.length) % s.length;
+        s[next].style.display = 'block';
     }}
     </script>
     """
 
     folium.Marker(
-        location=[lat, lon],
+        location=coords,
         popup=folium.Popup(popup_html, max_width=350),
-        icon=folium.Icon(color="blue" if details['model_source'] == "LSTM" else "red", icon="info-sign")
-    ).add_to(m)
+        icon=folium.Icon(color="blue" if r['model_source'] == "LSTM" else "red", icon="info-sign")
+    ).add_to(lstm_layer if r['model_source'] == "LSTM" else bilstm_layer)
 
-# 7. RENDER
-st_folium(
-    m, 
-    width=1200, 
-    height=600, 
-    center=st.session_state.center, 
-    zoom=st.session_state.zoom,
-    key=f"map_{st.session_state.map_key}"
-)
+lstm_layer.add_to(m)
+bilstm_layer.add_to(m)
+folium.LayerControl().add_to(m)
+
+st_folium(m, width=1200, height=600)

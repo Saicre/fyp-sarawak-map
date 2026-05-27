@@ -2,90 +2,135 @@ import streamlit as st
 import json
 import folium
 from streamlit_folium import st_folium
+from folium.plugins import Fullscreen
+from collections import defaultdict
 
-st.set_page_config(layout="wide")
+# 1. PAGE SETUP
+st.set_page_config(page_title="Sarawak Gazette NLP Map", layout="wide")
 
-# 1. LOAD DATA
+# Custom Navbar
+st.markdown("""
+    <div style="background-color: #f8f9fa; padding: 15px; border-bottom: 2px solid #ddd; margin-bottom: 20px;">
+        <h2 style="margin:0;">🗺️ Sarawak Gazette Historical Gazetteer</h2>
+    </div>
+""", unsafe_allow_html=True)
+
+# 2. FILTERING
+model_filter = st.radio("Filter by Model Source:", ["Show All", "LSTM", "BiLSTM-CRF"], horizontal=True)
+
+# 3. DATA LOADING
 @st.cache_data
 def load_data():
     with open('sarawak_gazetteer.json', 'r') as file:
         return json.load(file)
 
-database_records = load_data()
+data = load_data()
 
-# 2. GROUPING DATA (Crucial for carousel)
-grouped_data = {}
-for record in database_records:
-    loc = record['historical_name']
-    if loc not in grouped_data:
-        grouped_data[loc] = []
-    grouped_data[loc].append(record)
+# 4. MAP STATE MANAGEMENT
+if st.button("📍 Recenter Map to Sarawak"):
+    st.session_state.center = [2.55, 113.0]
+    st.session_state.zoom = 7
+    st.rerun()
 
-# 3. MAP SETUP
-m = folium.Map(location=[2.55, 113.0], zoom_start=6, tiles='cartodbpositron')
-lstm_layer = folium.FeatureGroup(name="LSTM Predictions (Blue)")
-bilstm_layer = folium.FeatureGroup(name="BiLSTM-CRF Predictions (Red)")
+if 'center' not in st.session_state:
+    st.session_state.center = [2.55, 113.0]
+    st.session_state.zoom = 7
 
-def format_list(lst):
-    return ', '.join(lst) if lst else 'None'
+# 5. BUILD MAP
+m = folium.Map(location=st.session_state.center, zoom_start=st.session_state.zoom, tiles='cartodbpositron')
+Fullscreen().add_to(m)
 
-# 4. MARKER LOOP
-for loc, records in grouped_data.items():
+# --- GROUP DATA FOR PAGINATION ---
+# Group records by (Location ID, Model) so we can paginate sentences for the same place/model
+grouped_data = defaultdict(list)
+for record in data:
+    if model_filter != "Show All" and record["model_source"] != model_filter:
+        continue
+    key = (record['location_id'], record['model_source'])
+    grouped_data[key].append(record)
+
+# --- MARKER LOGIC WITH HTML/JS CAROUSEL ---
+for (loc_id, model_source), records in grouped_data.items():
+    # Use the coordinates of the first record in the group
     coords = records[0]['coordinates']
     
-    # Bounding Box Filter
-    if not (1.0 <= coords[0] <= 5.0 and 109.0 <= coords[1] <= 116.0):
-        continue
+    # Matching your visual offset and coloring logic from Colab
+    pin_color = "blue" if model_source == "LSTM" else "red"
+    lon_offset = 0.05 if pin_color == "red" else 0.0
+    actual_location = [coords[0], coords[1] + lon_offset]
 
-    # Build Carousel Slides
-    slides = ""
-    for i, r in enumerate(records):
-        display = "block" if i == 0 else "none"
-        slides += f"""
-        <div class='slide-{loc.replace(' ', '_')}' style='display: {display}; border-top: 1px solid #ccc; padding: 5px;'>
-            <i>"{r['snippet_text']}"</i><br>
-            <small>Source: {r['source_metadata']}</small>
-        </div>
+    total_slides = len(records)
+    
+    # Create a safe, unique ID for the Javascript variables to avoid collisions
+    html_id = f"{loc_id.replace('-', '_').replace(' ', '_')}_{model_source.replace('-', '_')}"
+
+    # Start the HTML block for the popup
+    popup_html = f"""<div id="carousel_{html_id}" style="width: 280px;">"""
+
+    # Generate a "slide" for every sentence related to this location
+    for i, rec in enumerate(records):
+        display_hist = rec['historical_name'] if rec['historical_name'] != rec['normalized_name'] else "N/A (Unchanged)"
+        linked = rec['linked_entities']
+        
+        # Only display the first slide initially
+        display_style = "block" if i == 0 else "none"
+
+        popup_html += f"""
+        <div id="slide_{html_id}_{i}" style="display: {display_style};">
+            <b>ID:</b> {rec['location_id']}<br>
+            <b>Current Name:</b> {rec['normalized_name']}<br>
+            <b>Historical Name:</b> {display_hist}<br>
+            <b>Model:</b> {rec['model_source']}<br>
+            <hr style="margin: 8px 0;">
+            <b>People:</b> {', '.join(linked.get('PERSON', [])) if linked.get('PERSON') else 'None'}<br>
+            <b>Dates:</b> {', '.join(linked.get('DATE', [])) if linked.get('DATE') else 'None'}<br>
+            <b>Orgs:</b> {', '.join(linked.get('ORGANISATION', [])) if linked.get('ORGANISATION') else 'None'}<br>
+            <b>Events:</b> {', '.join(linked.get('EVENT', [])) if linked.get('EVENT') else 'None'}<br>
+            <hr style="margin: 8px 0;">
+            <i>"{rec['snippet_text']}"</i><br><br>
+            <small>Source: {rec['source_metadata']}</small>
         """
 
-    # Combine Static Colab Info + Carousel
-    r = records[0]
-    display_hist = r['historical_name'] if r['historical_name'] != r['normalized_name'] else "N/A (Unchanged)"
-    
-    popup_html = f"""
-    <div style='width: 300px;'>
-        <b>ID:</b> {r['location_id']}<br>
-        <b>Current Name:</b> {r['normalized_name']}<br>
-        <b>Historical Name:</b> {display_hist}<br>
-        <b>Model:</b> {r['model_source']}<br>
-        <hr>
-        <b>People:</b> {format_list(r['linked_entities'].get('PERSON', []))}<br>
-        <b>Dates:</b> {format_list(r['linked_entities'].get('DATE', []))}<br>
-        <b>Orgs:</b> {format_list(r['linked_entities'].get('ORGANISATION', []))}<br>
-        <b>Events:</b> {format_list(r['linked_entities'].get('EVENT', []))}<br>
-        <div id='ss-{loc.replace(' ', '_')}'>{slides}</div>
-        <button onclick="plus(-1, '{loc.replace(' ', '_')}')">❮</button>
-        <button onclick="plus(1, '{loc.replace(' ', '_')}')">❯</button>
-    </div>
-    <script>
-    function plus(n, id) {{
-        let s = document.getElementsByClassName('slide-'+id);
-        let c = 0;
-        for(let i=0; i<s.length; i++) {{ if(s[i].style.display === 'block') c = i; s[i].style.display = 'none'; }}
-        let next = (c + n + s.length) % s.length;
-        s[next].style.display = 'block';
-    }}
-    </script>
-    """
+        # If there is more than 1 sentence, inject the navigation arrows
+        if total_slides > 1:
+            popup_html += f"""
+            <div style="text-align: center; margin-top: 10px; background: #f0f0f0; padding: 5px; border-radius: 5px;">
+                <button onclick="changeSlide_{html_id}(-1)" style="cursor:pointer; border:1px solid #ccc; border-radius:3px; padding: 2px 8px;">&larr; Prev</button>
+                <span style="margin: 0 10px; font-size: 0.9em;"><b>{i+1}</b> of {total_slides}</span>
+                <button onclick="changeSlide_{html_id}(1)" style="cursor:pointer; border:1px solid #ccc; border-radius:3px; padding: 2px 8px;">Next &rarr;</button>
+            </div>
+            """
 
+        popup_html += "</div>"
+
+    # Inject the Javascript specifically scoped to this marker's popup
+    if total_slides > 1:
+        popup_html += f"""
+        <script>
+            var currentSlide_{html_id} = 0;
+            function changeSlide_{html_id}(direction) {{
+                // Hide current slide
+                document.getElementById('slide_{html_id}_' + currentSlide_{html_id}).style.display = 'none';
+                
+                // Update index
+                currentSlide_{html_id} += direction;
+                if (currentSlide_{html_id} >= {total_slides}) currentSlide_{html_id} = 0;
+                if (currentSlide_{html_id} < 0) currentSlide_{html_id} = {total_slides} - 1;
+                
+                // Show new slide
+                document.getElementById('slide_{html_id}_' + currentSlide_{html_id}).style.display = 'block';
+            }}
+        </script>
+        """
+
+    popup_html += "</div>"
+
+    # Add the marker to the map
     folium.Marker(
-        location=coords,
-        popup=folium.Popup(popup_html, max_width=350),
-        icon=folium.Icon(color="blue" if r['model_source'] == "LSTM" else "red", icon="info-sign")
-    ).add_to(lstm_layer if r['model_source'] == "LSTM" else bilstm_layer)
+        location=actual_location,
+        popup=folium.Popup(popup_html, max_width=320),
+        icon=folium.Icon(color=pin_color, icon="info-sign")
+    ).add_to(m)
 
-lstm_layer.add_to(m)
-bilstm_layer.add_to(m)
-folium.LayerControl().add_to(m)
-
-st_folium(m, width=1200, height=600)
+# 6. RENDER
+st_folium(m, width=1200, height=600, center=st.session_state.center, zoom=st.session_state.zoom)

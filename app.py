@@ -359,29 +359,49 @@ data = load_data()
 # ── 5. CONTROLS ────────────────────────────────────────────────────────────────
 st.markdown("<div class='gap-md'></div>", unsafe_allow_html=True)
 
-# Row 1: radio widget defined first (needed for derived stats), rendered visually later
-# We use a hidden container trick: define the radio now to get its value,
-# then render the stats row, then render the radio row below.
-# Streamlit renders in call order, so we split into two st.columns() calls.
+col_filter, col_s1, col_s2, col_s3 = st.columns([3, 1.2, 1.2, 1.2])
 
-# --- Get the radio value first (renders in its own invisible row temporarily) ---
-# Instead, use session_state to decouple value from render position:
-if "model_filter" not in st.session_state:
-    st.session_state.model_filter = "Show All"
-
-# Derived stats (computed before radio renders, using session state value)
-model_filter = st.session_state.model_filter
-filtered    = data if model_filter == "Show All" else [r for r in data if r["model_source"] == model_filter]
-n_records   = len(filtered)
+# Derived stats
+filtered   = data if model_filter == "Show All" else [r for r in data if r["model_source"] == model_filter]
+n_records  = len(filtered)
 n_locations = len(set(r['location_id'] for r in filtered))
-n_lstm      = len([r for r in data if r['model_source'] == 'LSTM'])
-n_bilstm    = len([r for r in data if r['model_source'] == 'BiLSTM-CRF'])
-total_all   = n_lstm + n_bilstm
-lstm_pct    = round(n_lstm / total_all * 100) if total_all else 0
-bilstm_pct  = 100 - lstm_pct
+n_lstm     = len([r for r in data if r['model_source'] == 'LSTM'])
+n_bilstm   = len([r for r in data if r['model_source'] == 'BiLSTM-CRF'])
+total_all  = n_lstm + n_bilstm
+lstm_pct   = round(n_lstm / total_all * 100) if total_all else 0
+bilstm_pct = 100 - lstm_pct
 
-# Row 1: stat cards + breakdown panel
-col_s1, col_s2, col_s3, col_breakdown = st.columns(4)
+# Model breakdown mini-panel (fills the gap below the radio)
+with col_filter:
+    st.markdown(f"""
+    <div class="model-summary">
+        <div class="ms-row">
+            <span class="ms-label">
+                <span class="ms-dot" style="background:#3b82f6;"></span>LSTM
+            </span>
+            <span class="ms-value">{n_lstm}</span>
+        </div>
+        <div class="ms-bar-wrap">
+            <div class="ms-bar-fill" style="width:{lstm_pct}%; background:#3b82f6;"></div>
+        </div>
+        <div class="ms-row">
+            <span class="ms-label">
+                <span class="ms-dot" style="background:#ef4444;"></span>BiLSTM-CRF
+            </span>
+            <span class="ms-value">{n_bilstm}</span>
+        </div>
+        <div class="ms-bar-wrap">
+            <div class="ms-bar-fill" style="width:{bilstm_pct}%; background:#ef4444;"></div>
+        </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+with col_filter:
+    model_filter = st.radio(
+        "Filter by model:",
+        ["Show All", "LSTM", "BiLSTM-CRF"],
+        horizontal=True 
+    )
 
 with col_s1:
     st.markdown(f"""
@@ -415,45 +435,6 @@ with col_s3:
             <span class="stat-label">Total</span>
         </div>
     </div>""", unsafe_allow_html=True)
-
-with col_breakdown:
-    st.markdown(f"""
-    <div class="model-summary">
-        <div class="ms-row">
-            <span class="ms-label">
-                <span class="ms-dot" style="background:#3b82f6;"></span>LSTM
-            </span>
-            <span class="ms-value">{n_lstm}</span>
-        </div>
-        <div class="ms-bar-wrap">
-            <div class="ms-bar-fill" style="width:{lstm_pct}%; background:#3b82f6;"></div>
-        </div>
-        <div class="ms-row">
-            <span class="ms-label">
-                <span class="ms-dot" style="background:#ef4444;"></span>BiLSTM-CRF
-            </span>
-            <span class="ms-value">{n_bilstm}</span>
-        </div>
-        <div class="ms-bar-wrap">
-            <div class="ms-bar-fill" style="width:{bilstm_pct}%; background:#ef4444;"></div>
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
-
-st.markdown("<div class='gap-sm'></div>", unsafe_allow_html=True)
-
-# Row 2: radio filter
-col_filter, _ = st.columns([1.5, 2.5])
-
-with col_filter:
-    new_filter = st.radio(
-        "Filter by model:",
-        ["Show All", "LSTM", "BiLSTM-CRF"],
-        index=["Show All", "LSTM", "BiLSTM-CRF"].index(st.session_state.model_filter),
-    )
-    if new_filter != st.session_state.model_filter:
-        st.session_state.model_filter = new_filter
-        st.rerun()
 
 
 # ── 6. MAP STATE ───────────────────────────────────────────────────────────────

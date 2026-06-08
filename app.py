@@ -1,66 +1,29 @@
-Claude finished the response
-
-how do i change the color of this text to white? Also that gap here feels kind of empty, no? And alternate text when you hover over the sections that says "Extracted records of the selected model" when you hover over the Records box, and "Unique locations marked" in the record
-
-actually ykw can you integrate those changes into this existing code? Also still needs that recenter button (when you click on it, it should bring you back to the point the map initially loaded at when it first generated) - it should be on the map though, below these buttons. Or, if cannot, then place it in the gap just above the map
-7:10 am
-Viewed 2 files
-
-Got it. So the changes are:
-
-    Radio label text ("Show All", "LSTM", "BiLSTM-CRF") → white
-    Empty gap between the filter panel and stat cards → fill it with something meaningful
-    Hover tooltips on stat cards — "Extracted records of the selected model" on Records, "Unique locations marked" on Locations
-    Recenter button on the map, below the +/–/fullscreen buttons (the existing JS-based one wasn't working reliably — I'll fix it with a proper Folium CustomControl)
-
-Let me integrate all of these now:
-Ran a command, read a file
-
-Here's what changed in the updated app.py:
-
-1. White radio option text — added div[data-testid="stRadio"] p { color: #ffffff !important; } which targets the actual <p> tags Streamlit renders inside each radio option.
-
-2. Empty gap filled — replaced the blank space below the radio with a mini model breakdown panel showing LSTM vs BiLSTM-CRF record counts with proportional bar indicators. It matches the dark card style and updates dynamically when you switch filters.
-
-3. Hover tooltips on stat cards — wrapped each card in a .stat-tooltip-wrap div with a CSS-only tooltip (no JS needed). Hovering shows:
-
-    Records → "Extracted records of the selected model"
-    Locations → "Unique locations marked on the map"
-    Total → "Total records across all models"
-
-4. Recenter button on the map — replaced the unreliable DOMContentLoaded approach with a self-polling IIFE (waitForLeaflet) that keeps checking until Leaflet is ready, then injects a proper L.Control at topleft — it'll appear as a ⌂ button stacked below the +/−/fullscreen buttons, and snaps the view back to [2.55, 113.0] at zoom 7.
-App
-PY 
-
-
-Claude is AI and can make mistakes. Please double-check responses.
-App · PY
 import streamlit as st
 import json
 import folium
 from streamlit_folium import st_folium
 from folium.plugins import Fullscreen, LocateControl
 from collections import defaultdict
- 
+
 # ── 1. PAGE SETUP ─────────────────────────────────────────────────────────────
 st.set_page_config(
     page_title="Sarawak Gazette · Historical Gazetteer",
     layout="wide",
     page_icon="🗺️"
 )
- 
+
 # ── 2. GLOBAL CSS ──────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
- 
+
 /* ── Reset & base ── */
 #MainMenu, footer, header { visibility: hidden; }
 .stApp { background: #0d1117; font-family: 'DM Sans', sans-serif; }
- 
+
 /* ── Remove Streamlit top padding ── */
 .block-container { padding-top: 0 !important; }
- 
+
 /* ── NAVBAR ── */
 .navbar {
     background: linear-gradient(110deg, #0d1117 0%, #151d2b 60%, #0f1e2e 100%);
@@ -108,7 +71,7 @@ st.markdown("""
     margin-left: 12px;
     vertical-align: middle;
 }
- 
+
 /* ── STAT CARDS ── */
 .stat-card {
     background: #151d2b;
@@ -154,7 +117,7 @@ st.markdown("""
     display: block;
     margin-bottom: 4px;
 }
- 
+
 /* ── STAT TOOLTIP ── */
 .stat-tooltip-wrap {
     position: relative;
@@ -193,7 +156,7 @@ st.markdown("""
     visibility: visible;
     opacity: 1;
 }
- 
+
 /* ── FILTER RADIO — white option text ── */
 div[data-testid="stRadio"] label {
     color: #ffffff !important;
@@ -207,7 +170,7 @@ div[data-testid="stRadio"] > label > span {
 div[data-testid="stRadio"] p {
     color: #ffffff !important;
 }
- 
+
 /* Framed filter panel */
 div[data-testid="stRadio"] {
     background: #1a2333;
@@ -224,7 +187,7 @@ div[data-testid="stRadio"] > label {
     margin-bottom: 6px;
     display: block;
 }
- 
+
 /* ── MODEL SUMMARY PILL (fills the empty gap) ── */
 .model-summary {
     background: #1a2333;
@@ -273,7 +236,7 @@ div[data-testid="stRadio"] > label {
     border-radius: 2px;
     transition: width 0.4s ease;
 }
- 
+
 /* ── LEGEND ── */
 .legend-bar {
     background: #151d2b;
@@ -304,7 +267,7 @@ div[data-testid="stRadio"] > label {
     letter-spacing: 1px;
     color: #4b5563;
 }
- 
+
 /* ── BUTTON ── */
 .stButton > button {
     background: transparent !important;
@@ -321,7 +284,7 @@ div[data-testid="stRadio"] > label {
     background: rgba(56,189,248,0.08) !important;
     border-color: rgba(56,189,248,0.6) !important;
 }
- 
+
 /* ── MAP WRAPPER ── */
 .map-frame {
     border-radius: 14px;
@@ -331,7 +294,7 @@ div[data-testid="stRadio"] > label {
     margin: 0 0 16px 0;
 }
 .map-frame iframe { display: block; }
- 
+
 /* ── FOOTER ── */
 .footer {
     text-align: center;
@@ -342,14 +305,14 @@ div[data-testid="stRadio"] > label {
     border-top: 1px solid rgba(255,255,255,0.04);
     margin-top: 8px;
 }
- 
+
 /* spacing helpers */
 .gap-sm { margin-top: 12px; }
 .gap-md { margin-top: 20px; }
 </style>
 """, unsafe_allow_html=True)
- 
- 
+
+
 # ── 3. NAVBAR ──────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="navbar">
@@ -365,7 +328,7 @@ st.markdown("""
     </div>
 </div>
 """, unsafe_allow_html=True)
- 
+
 # Legend row
 st.markdown("""
 <div style="padding: 10px 4px 0px 4px;">
@@ -383,27 +346,27 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 st.markdown("<div class='gap-sm'></div>", unsafe_allow_html=True)
- 
+
 # ── 4. DATA LOADING ────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
     with open('sarawak_gazetteer.json', 'r') as f:
         return json.load(f)
- 
+
 data = load_data()
- 
- 
+
+
 # ── 5. CONTROLS ────────────────────────────────────────────────────────────────
 st.markdown("<div class='gap-md'></div>", unsafe_allow_html=True)
- 
+
 col_filter, col_s1, col_s2, col_s3 = st.columns([3, 1.2, 1.2, 1.2])
- 
+
 with col_filter:
     model_filter = st.radio(
         "Filter by model:",
         ["Show All", "LSTM", "BiLSTM-CRF"],
     )
- 
+
 # Derived stats
 filtered   = data if model_filter == "Show All" else [r for r in data if r["model_source"] == model_filter]
 n_records  = len(filtered)
@@ -413,7 +376,7 @@ n_bilstm   = len([r for r in data if r['model_source'] == 'BiLSTM-CRF'])
 total_all  = n_lstm + n_bilstm
 lstm_pct   = round(n_lstm / total_all * 100) if total_all else 0
 bilstm_pct = 100 - lstm_pct
- 
+
 # Model breakdown mini-panel (fills the gap below the radio)
 with col_filter:
     st.markdown(f"""
@@ -438,7 +401,7 @@ with col_filter:
         </div>
     </div>
     """, unsafe_allow_html=True)
- 
+
 with col_s1:
     st.markdown(f"""
     <div class="stat-tooltip-wrap">
@@ -449,7 +412,7 @@ with col_s1:
             <span class="stat-label">Records</span>
         </div>
     </div>""", unsafe_allow_html=True)
- 
+
 with col_s2:
     st.markdown(f"""
     <div class="stat-tooltip-wrap">
@@ -460,7 +423,7 @@ with col_s2:
             <span class="stat-label">Locations</span>
         </div>
     </div>""", unsafe_allow_html=True)
- 
+
 with col_s3:
     st.markdown(f"""
     <div class="stat-tooltip-wrap">
@@ -471,17 +434,17 @@ with col_s3:
             <span class="stat-label">Total</span>
         </div>
     </div>""", unsafe_allow_html=True)
- 
- 
+
+
 # ── 6. MAP STATE ───────────────────────────────────────────────────────────────
 if 'center' not in st.session_state:
     st.session_state.center = [2.55, 113.0]
     st.session_state.zoom = 7
- 
+
 INIT_LAT = 2.55
 INIT_LNG = 113.0
 INIT_ZOOM = 7
- 
+
 # ── 7. BUILD MAP ───────────────────────────────────────────────────────────────
 m = folium.Map(
     location=st.session_state.center,
@@ -489,7 +452,7 @@ m = folium.Map(
     tiles='cartodbpositron'
 )
 Fullscreen().add_to(m)
- 
+
 # ── Recenter button injected as a proper Leaflet control ──────────────────────
 recenter_js = f"""
 <script>
@@ -498,7 +461,7 @@ recenter_js = f"""
     var maps = Object.values(window).filter(function(v) {{ return v && v instanceof L.Map; }});
     if (maps.length === 0) {{ setTimeout(waitForLeaflet, 200); return; }}
     var map = maps[0];
- 
+
     var ResetControl = L.Control.extend({{
         options: {{ position: 'topleft' }},
         onAdd: function(map) {{
@@ -525,7 +488,7 @@ recenter_js = f"""
 </script>
 """
 m.get_root().html.add_child(folium.Element(recenter_js))
- 
+
 # ── Inject popup stylesheet ────────────────────────────────────────────────────
 POPUP_CSS = """
 <style>
@@ -543,7 +506,7 @@ POPUP_CSS = """
     font-size: 13px !important;
 }
 .leaflet-popup-tip-container { margin-top: -1px; }
- 
+
 /* Header */
 .ph { padding: 13px 16px 11px; color: white; }
 .ph.lstm   { background: linear-gradient(125deg, #1d4ed8 0%, #2563eb 100%); }
@@ -551,21 +514,21 @@ POPUP_CSS = """
 .ph-name  { font-size: 1.05em; font-weight: 600; color: #fff; line-height: 1.3; }
 .ph-model { font-size: 0.72em; font-weight: 400; opacity: 0.80;
             letter-spacing: 0.5px; text-transform: uppercase; margin-top: 2px; }
- 
+
 /* Body */
 .pb { padding: 12px 16px 14px; background: #ffffff; }
- 
+
 /* Fields */
 .pf-label { font-size: 0.65em; font-weight: 600; text-transform: uppercase;
             letter-spacing: 0.8px; color: #9ca3af; margin-bottom: 1px; }
 .pf-value { color: #1f2937; font-size: 0.85em; }
- 
+
 /* Two-col grid */
 .pgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 12px; margin-bottom: 9px; }
- 
+
 /* Divider */
 .pdiv { border: none; border-top: 1px solid #f1f5f9; margin: 9px 0; }
- 
+
 /* Tags */
 .ptag { display: inline-block; border-radius: 4px;
         padding: 1px 7px; font-size: 0.73em; font-weight: 500;
@@ -575,22 +538,22 @@ POPUP_CSS = """
 .t-date   { background: #dcfce7; color: #166534; }
 .t-org    { background: #ede9fe; color: #5b21b6; }
 .t-event  { background: #fee2e2; color: #991b1b; }
- 
+
 /* Coordinates */
 .pcoords { font-family: 'DM Mono', 'Courier New', monospace;
            background: #f1f5f9; padding: 4px 9px; border-radius: 5px;
            font-size: 0.78em; color: #475569; display: inline-block; margin-top: 2px; }
- 
+
 /* Snippet */
 .psnippet { background: #f8fafc; border-left: 3px solid #3b82f6;
             padding: 8px 11px; border-radius: 0 7px 7px 0;
             font-style: italic; color: #374151; font-size: 0.82em;
             line-height: 1.55; margin: 4px 0 6px; }
 .psnippet.bilstm { border-left-color: #ef4444; }
- 
+
 /* Source */
 .psource { font-size: 0.72em; color: #9ca3af; }
- 
+
 /* Nav */
 .pnav { display: flex; justify-content: space-between; align-items: center;
         background: #f8fafc; padding: 7px 12px;
@@ -603,23 +566,23 @@ POPUP_CSS = """
 </style>
 """
 m.get_root().html.add_child(folium.Element(POPUP_CSS))
- 
- 
+
+
 # ── Helpers ────────────────────────────────────────────────────────────────────
 def fmt_tags(items, css_class):
     if not items:
         return '<span class="ptag-none">None</span>'
     return " ".join(f'<span class="ptag {css_class}">{item}</span>' for item in items)
- 
- 
+
+
 # ── Group records ──────────────────────────────────────────────────────────────
 grouped = defaultdict(list)
 for rec in data:
     if model_filter != "Show All" and rec["model_source"] != model_filter:
         continue
     grouped[(rec['location_id'], rec['model_source'])].append(rec)
- 
- 
+
+
 # ── Build markers ──────────────────────────────────────────────────────────────
 for (loc_id, model_src), records in grouped.items():
     coords     = records[0]['coordinates']
@@ -630,16 +593,16 @@ for (loc_id, model_src), records in grouped.items():
     pin_loc    = [coords[0], coords[1] + lon_offset]
     total      = len(records)
     uid        = f"{loc_id.replace('-','_').replace(' ','_')}_{model_src.replace('-','_')}"
- 
+
     html = f'<div id="car_{uid}" style="width:295px;">'
- 
+
     for i, r in enumerate(records):
         hist     = r['historical_name'] if r['historical_name'] != r['normalized_name'] else "N/A (Unchanged)"
         resolved = r.get('resolved_name', 'N/A')
         linked   = r['linked_entities']
         rc       = r['coordinates']
         vis      = "block" if i == 0 else "none"
- 
+
         html += f"""
 <div id="sl_{uid}_{i}" style="display:{vis};">
   <div class="ph {hdr_class}">
@@ -704,9 +667,9 @@ for (loc_id, model_src), records in grouped.items():
     <span class="pnav-counter">{i+1} / {total}</span>
     <button class="pnav-btn" onclick="chg_{uid}(1)">Next &#8594;</button>
   </div>"""
- 
+
         html += "\n</div>\n"
- 
+
     if total > 1:
         html += f"""
 <script>
@@ -717,16 +680,16 @@ function chg_{uid}(d) {{
   document.getElementById('sl_{uid}_' + _c_{uid}).style.display = 'block';
 }}
 </script>"""
- 
+
     html += "</div>"
- 
+
     folium.Marker(
         location=pin_loc,
         popup=folium.Popup(html, max_width=320),
         icon=folium.Icon(color=pin_color, icon="info-sign")
     ).add_to(m)
- 
- 
+
+
 # ── 8. RENDER ──────────────────────────────────────────────────────────────────
 st.markdown('<div class="map-frame">', unsafe_allow_html=True)
 st_folium(
@@ -738,8 +701,8 @@ st_folium(
     returned_objects=[]
 )
 st.markdown('</div>', unsafe_allow_html=True)
- 
- 
+
+
 # ── 9. FOOTER ──────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="footer">
@@ -749,5 +712,3 @@ st.markdown("""
     Built with Streamlit &amp; Folium
 </div>
 """, unsafe_allow_html=True)
- 
-

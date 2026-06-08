@@ -449,6 +449,7 @@ with col_filter:
     new_filter = st.radio(
         "Filter by model:",
         ["Show All", "LSTM", "BiLSTM-CRF"],
+        horizontal=True,
         index=["Show All", "LSTM", "BiLSTM-CRF"].index(st.session_state.model_filter),
     )
     if new_filter != st.session_state.model_filter:

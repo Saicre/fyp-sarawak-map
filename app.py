@@ -397,6 +397,7 @@ with col_left:
     if st.button("⌂  Recenter Map"):
         st.session_state.center = [2.55, 113.0]
         st.session_state.zoom = 7
+        st.session_state.map_key += 1
         st.rerun()
 
 with col_right:
@@ -462,6 +463,8 @@ with col_right:
 if 'center' not in st.session_state:
     st.session_state.center = [2.55, 113.0]
     st.session_state.zoom = 7
+if 'map_key' not in st.session_state:
+    st.session_state.map_key = 0
 
 INIT_LAT = 2.55
 INIT_LNG = 113.0
@@ -580,7 +583,7 @@ for (loc_id, model_src), records in grouped.items():
     total      = len(records)
     uid        = f"{loc_id.replace('-','_').replace(' ','_')}_{model_src.replace('-','_')}"
 
-    html = f'<div id="car_{uid}" style="width:295px;">'
+    html = f'<div id="car_{uid}" data-cur="0" style="width:295px;">'
 
     for i, r in enumerate(records):
         hist     = r['historical_name'] if r['historical_name'] != r['normalized_name'] else "N/A (Unchanged)"
@@ -647,25 +650,27 @@ for (loc_id, model_src), records in grouped.items():
   </div>
 """
         if total > 1:
+            inline_js = (
+                f"var c=document.getElementById('car_{uid}'),"
+                f"cur=+c.dataset.cur,"
+                f"nx=(cur+__D__+{total})%{total};"
+                f"document.getElementById('sl_{uid}_'+cur).style.display='none';"
+                f"document.getElementById('sl_{uid}_'+nx).style.display='block';"
+                f"c.dataset.cur=nx;"
+            )
+            prev_js = inline_js.replace("__D__", "-1")
+            next_js = inline_js.replace("__D__", "1")
             html += f"""
   <div class="pnav">
-    <button class="pnav-btn" onclick="chg_{uid}(-1)">&#8592; Prev</button>
+    <button class="pnav-btn" onclick="{prev_js}">&#8592; Prev</button>
     <span class="pnav-counter">{i+1} / {total}</span>
-    <button class="pnav-btn" onclick="chg_{uid}(1)">Next &#8594;</button>
+    <button class="pnav-btn" onclick="{next_js}">Next &#8594;</button>
   </div>"""
 
         html += "\n</div>\n"
 
     if total > 1:
-        html += f"""
-<script>
-var _c_{uid} = 0;
-function chg_{uid}(d) {{
-  document.getElementById('sl_{uid}_' + _c_{uid}).style.display = 'none';
-  _c_{uid} = (_c_{uid} + d + {total}) % {total};
-  document.getElementById('sl_{uid}_' + _c_{uid}).style.display = 'block';
-}}
-</script>"""
+        pass  # nav handled fully inline above
 
     html += "</div>"
 
@@ -684,7 +689,8 @@ st_folium(
     height=640,
     center=st.session_state.center,
     zoom=st.session_state.zoom,
-    returned_objects=[]
+    returned_objects=[],
+    key=f"map_{st.session_state.map_key}"
 )
 st.markdown('</div>', unsafe_allow_html=True)
 

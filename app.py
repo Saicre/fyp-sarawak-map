@@ -380,12 +380,57 @@ total_all   = n_lstm + n_bilstm
 lstm_pct    = round(n_lstm / total_all * 100) if total_all else 0
 bilstm_pct  = 100 - lstm_pct
 
-# Row 1: breakdown panel (wide, left) + 3 stat cards (right)
-col_breakdown, col_s1, col_s2, col_s3 = st.columns([2.5, 1, 1, 1])
+# Layout: radio (tall, left) | stats top-right + breakdown bottom-right
+col_left, col_right = st.columns([1.5, 2.5])
 
-with col_breakdown:
+with col_left:
+    new_filter = st.radio(
+        "Filter by model:",
+        ["Show All", "LSTM", "BiLSTM-CRF"],
+        index=["Show All", "LSTM", "BiLSTM-CRF"].index(st.session_state.model_filter),
+        horizontal=True,
+    )
+    if new_filter != st.session_state.model_filter:
+        st.session_state.model_filter = new_filter
+        st.rerun()
+
+with col_right:
+    # Stats row
+    col_s1, col_s2, col_s3 = st.columns(3)
+    with col_s1:
+        st.markdown(f"""
+        <div class="stat-tooltip-wrap">
+            <span class="stat-tooltip-text">Extracted records of the selected model</span>
+            <div class="stat-card">
+                <span class="stat-icon">📄</span>
+                <span class="stat-number">{n_records}</span>
+                <span class="stat-label">Records</span>
+            </div>
+        </div>""", unsafe_allow_html=True)
+    with col_s2:
+        st.markdown(f"""
+        <div class="stat-tooltip-wrap">
+            <span class="stat-tooltip-text">Unique locations marked on the map</span>
+            <div class="stat-card">
+                <span class="stat-icon">📍</span>
+                <span class="stat-number">{n_locations}</span>
+                <span class="stat-label">Locations</span>
+            </div>
+        </div>""", unsafe_allow_html=True)
+    with col_s3:
+        st.markdown(f"""
+        <div class="stat-tooltip-wrap">
+            <span class="stat-tooltip-text">Total records across all models</span>
+            <div class="stat-card">
+                <span class="stat-icon">🔬</span>
+                <span class="stat-number">{n_lstm + n_bilstm}</span>
+                <span class="stat-label">Total</span>
+            </div>
+        </div>""", unsafe_allow_html=True)
+
+    # Breakdown panel below stats
     st.markdown(f"""
-    <div class="model-summary">
+    <div class="model-summary" style="margin-top:8px;">
         <div class="ms-row">
             <span class="ms-label">
                 <span class="ms-dot" style="background:#3b82f6;"></span>LSTM
@@ -406,55 +451,6 @@ with col_breakdown:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
-with col_s1:
-    st.markdown(f"""
-    <div class="stat-tooltip-wrap">
-        <span class="stat-tooltip-text">Extracted records of the selected model</span>
-        <div class="stat-card">
-            <span class="stat-icon">📄</span>
-            <span class="stat-number">{n_records}</span>
-            <span class="stat-label">Records</span>
-        </div>
-    </div>""", unsafe_allow_html=True)
-
-with col_s2:
-    st.markdown(f"""
-    <div class="stat-tooltip-wrap">
-        <span class="stat-tooltip-text">Unique locations marked on the map</span>
-        <div class="stat-card">
-            <span class="stat-icon">📍</span>
-            <span class="stat-number">{n_locations}</span>
-            <span class="stat-label">Locations</span>
-        </div>
-    </div>""", unsafe_allow_html=True)
-
-with col_s3:
-    st.markdown(f"""
-    <div class="stat-tooltip-wrap">
-        <span class="stat-tooltip-text">Total records across all models</span>
-        <div class="stat-card">
-            <span class="stat-icon">🔬</span>
-            <span class="stat-number">{n_lstm + n_bilstm}</span>
-            <span class="stat-label">Total</span>
-        </div>
-    </div>""", unsafe_allow_html=True)
-
-st.markdown("<div class='gap-sm'></div>", unsafe_allow_html=True)
-
-# Row 2: radio filter
-col_filter, _ = st.columns([1.5, 2.5])
-
-with col_filter:
-    new_filter = st.radio(
-        "Filter by model:",
-        ["Show All", "LSTM", "BiLSTM-CRF"],
-        horizontal=True,
-        index=["Show All", "LSTM", "BiLSTM-CRF"].index(st.session_state.model_filter),
-    )
-    if new_filter != st.session_state.model_filter:
-        st.session_state.model_filter = new_filter
-        st.rerun()
 
 
 # ── 6. MAP STATE ───────────────────────────────────────────────────────────────

@@ -2,7 +2,7 @@ import streamlit as st
 import json
 import folium
 from streamlit_folium import st_folium
-from folium.plugins import Fullscreen
+from folium.plugins import Fullscreen, LocateControl
 from collections import defaultdict
 
 # ── 1. PAGE SETUP ─────────────────────────────────────────────────────────────
@@ -122,6 +122,23 @@ div[data-testid="stRadio"] > label > span {
     font-weight: 500 !important;
 }
 
+/* Framed filter panel */
+div[data-testid="stRadio"] {
+    background: #1a2333;
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 10px;
+    padding: 12px 16px;
+}
+div[data-testid="stRadio"] > label {
+    color: #94a3b8 !important;
+    font-size: 0.78em !important;
+    font-weight: 600 !important;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+    display: block;
+}
+
 /* ── LEGEND ── */
 .legend-bar {
     background: #151d2b;
@@ -214,6 +231,23 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
+# Legend row
+st.markdown("""
+<div style="padding: 10px 4px 0px 4px;">
+<div class="legend-bar" style="margin-top:12px;">
+    <span class="legend-title">Markers:</span>
+    <span class="legend-item">
+        <span class="legend-dot" style="background:#3b82f6;"></span>LSTM
+    </span>
+    <span class="legend-item">
+        <span class="legend-dot" style="background:#ef4444;"></span>BiLSTM-CRF
+    </span>
+    <span style="margin-left:auto; font-size:0.75em; color:#374151;">
+        Click any marker to inspect its record(s)
+    </span>
+</div>
+""", unsafe_allow_html=True)
+st.markdown("<div class='gap-sm'></div>", unsafe_allow_html=True)
 
 # ── 4. DATA LOADING ────────────────────────────────────────────────────────────
 @st.cache_data
@@ -227,13 +261,12 @@ data = load_data()
 # ── 5. CONTROLS ────────────────────────────────────────────────────────────────
 st.markdown("<div class='gap-md'></div>", unsafe_allow_html=True)
 
-col_filter, col_s1, col_s2, col_s3, col_btn = st.columns([3, 1.2, 1.2, 1.2, 1.4])
+col_filter, col_s1, col_s2, col_s3 = st.columns([3, 1.2, 1.2, 1.2])
 
 with col_filter:
     model_filter = st.radio(
         "Filter by model:",
         ["Show All", "LSTM", "BiLSTM-CRF"],
-        horizontal=True
     )
 
 # Derived stats
@@ -267,30 +300,6 @@ with col_s3:
         <span class="stat-label">Total</span>
     </div>""", unsafe_allow_html=True)
 
-with col_btn:
-    st.markdown("<div style='margin-top:22px;'></div>", unsafe_allow_html=True)
-    if st.button("📍 Recenter to Sarawak"):
-        st.session_state.center = [2.55, 113.0]
-        st.session_state.zoom = 7
-        st.rerun()
-
-# Legend row
-st.markdown("""
-<div class="legend-bar" style="margin-top:12px;">
-    <span class="legend-title">Markers:</span>
-    <span class="legend-item">
-        <span class="legend-dot" style="background:#3b82f6;"></span>LSTM
-    </span>
-    <span class="legend-item">
-        <span class="legend-dot" style="background:#ef4444;"></span>BiLSTM-CRF
-    </span>
-    <span style="margin-left:auto; font-size:0.75em; color:#374151;">
-        Click any marker to inspect its record(s)
-    </span>
-</div>
-""", unsafe_allow_html=True)
-st.markdown("<div class='gap-sm'></div>", unsafe_allow_html=True)
-
 
 # ── 6. MAP STATE ───────────────────────────────────────────────────────────────
 if 'center' not in st.session_state:
@@ -302,9 +311,39 @@ if 'center' not in st.session_state:
 m = folium.Map(
     location=st.session_state.center,
     zoom_start=st.session_state.zoom,
-    tiles='cartodbdark_matter'
+    tiles='cartodbpositron'
 )
 Fullscreen().add_to(m)
+
+reset_btn_js = """
+<script>
+function addResetButton(map) {
+    var btn = L.Control.extend({
+        options: { position: 'topleft' },
+        onAdd: function() {
+            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control');
+            var link = L.DomUtil.create('a', '', container);
+            link.innerHTML = '⌂';
+            link.title = 'Recenter to Sarawak';
+            link.style.cssText = 'font-size:16px; line-height:26px; cursor:pointer; text-decoration:none; color:#555;';
+            L.DomEvent.on(link, 'click', function(e) {
+                L.DomEvent.stopPropagation(e);
+                map.setView([2.55, 113.0], 7);
+            });
+            return container;
+        }
+    });
+    map.addControl(new btn());
+}
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        var maps = Object.values(window).filter(v => v instanceof L.Map);
+        if (maps.length > 0) addResetButton(maps[0]);
+    }, 500);
+});
+</script>
+"""
+m.get_root().html.add_child(folium.Element(reset_btn_js))
 
 # ── Inject popup stylesheet ────────────────────────────────────────────────────
 POPUP_CSS = """

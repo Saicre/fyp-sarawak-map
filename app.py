@@ -394,6 +394,11 @@ with col_left:
         st.session_state.model_filter = new_filter
         st.rerun()
 
+    if st.button("⌂  Recenter Map"):
+        st.session_state.center = [2.55, 113.0]
+        st.session_state.zoom = 7
+        st.rerun()
+
 with col_right:
     # Stats row
     col_s1, col_s2, col_s3 = st.columns(3)
@@ -469,42 +474,6 @@ m = folium.Map(
     tiles='cartodbpositron'
 )
 Fullscreen().add_to(m)
-
-# ── Recenter button injected as a proper Leaflet control ──────────────────────
-recenter_js = f"""
-<script>
-(function waitForLeaflet() {{
-    if (typeof L === 'undefined') {{ setTimeout(waitForLeaflet, 200); return; }}
-    var maps = Object.values(window).filter(function(v) {{ return v && v instanceof L.Map; }});
-    if (maps.length === 0) {{ setTimeout(waitForLeaflet, 200); return; }}
-    var map = maps[0];
-
-    var ResetControl = L.Control.extend({{
-        options: {{ position: 'topleft' }},
-        onAdd: function(map) {{
-            var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-recenter');
-            container.title = 'Recenter to Sarawak';
-            container.style.cssText = [
-                'width:26px', 'height:26px',
-                'background:white', 'cursor:pointer',
-                'display:flex', 'align-items:center', 'justify-content:center',
-                'font-size:15px', 'user-select:none',
-                'border-radius:2px'
-            ].join(';');
-            container.innerHTML = '⌂';
-            L.DomEvent.on(container, 'click', function(e) {{
-                L.DomEvent.stopPropagation(e);
-                map.setView([{INIT_LAT}, {INIT_LNG}], {INIT_ZOOM});
-            }});
-            L.DomEvent.disableClickPropagation(container);
-            return container;
-        }}
-    }});
-    new ResetControl().addTo(map);
-}})();
-</script>
-"""
-m.get_root().html.add_child(folium.Element(recenter_js))
 
 # ── Inject popup stylesheet ────────────────────────────────────────────────────
 POPUP_CSS = """

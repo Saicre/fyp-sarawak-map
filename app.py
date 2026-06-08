@@ -361,6 +361,13 @@ st.markdown("<div class='gap-md'></div>", unsafe_allow_html=True)
 
 col_filter, col_s1, col_s2, col_s3 = st.columns([3, 1.2, 1.2, 1.2])
 
+with col_filter:
+    model_filter = st.radio(
+        "Filter by model:",
+        ["Show All", "LSTM", "BiLSTM-CRF"],
+        horizontal=True 
+    )
+
 # Derived stats
 filtered   = data if model_filter == "Show All" else [r for r in data if r["model_source"] == model_filter]
 n_records  = len(filtered)
@@ -395,13 +402,6 @@ with col_filter:
         </div>
     </div>
     """, unsafe_allow_html=True)
-
-with col_filter:
-    model_filter = st.radio(
-        "Filter by model:",
-        ["Show All", "LSTM", "BiLSTM-CRF"],
-        horizontal=True 
-    )
 
 with col_s1:
     st.markdown(f"""

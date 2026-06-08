@@ -365,6 +365,7 @@ with col_filter:
     model_filter = st.radio(
         "Filter by model:",
         ["Show All", "LSTM", "BiLSTM-CRF"],
+        horizontal=True 
     )
 
 # Derived stats

@@ -287,27 +287,6 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00017",
-        "historical_name": "Limbang",
-        "normalized_name": "Limbang",
-        "resolved_name": "Limbang, Limbang Division, Sarawak, Malaysia",
-        "coordinates": [
-            4.3519985,
-            115.0602417
-        ],
-        "snippet_text": "The Public Works Department completed the road to Limbang this month.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
-                "Department"
-            ],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
         "location_id": "LOC_00018",
         "historical_name": "Saratok",
         "normalized_name": "Saratok",
@@ -396,27 +375,6 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00021",
-        "historical_name": "Lawas",
-        "normalized_name": "Lawas",
-        "resolved_name": "Lawas, Limbang Division, Sarawak, Malaysia",
-        "coordinates": [
-            4.4551211,
-            115.427188
-        ],
-        "snippet_text": "A new school was established in Lawas in September.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "September"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
         "location_id": "LOC_00003",
         "historical_name": "Lundu",
         "normalized_name": "Lundu",
@@ -497,27 +455,6 @@
             "EVENT": [
                 "dinner"
             ]
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00023",
-        "historical_name": "Marudi",
-        "normalized_name": "Marudi",
-        "resolved_name": "Marudi, Miri Division, Sarawak, 98008, Malaysia",
-        "coordinates": [
-            4.1766125,
-            114.3604754
-        ],
-        "snippet_text": "On the 10th of April, the launch arrived at Marudi.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "10th of April"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
         },
         "model_source": "LSTM"
     },
@@ -665,27 +602,6 @@
                 "C. D. Adams"
             ],
             "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00028",
-        "historical_name": "Miri Hospital",
-        "normalized_name": "Miri Hospital",
-        "resolved_name": "Miri Hospital (new block), 523, Lopeng, Miri, Miri Division, Sarawak, 98000, Malaysia",
-        "coordinates": [
-            4.3763923,
-            114.0025618
-        ],
-        "snippet_text": "The Miri Hospital admitted fifty patients in June.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "June"
-            ],
             "ORGANISATION": [],
             "EVENT": []
         },
@@ -1167,10 +1083,10 @@
         "location_id": "LOC_00053",
         "historical_name": "Stapok",
         "normalized_name": "Stapok",
-        "resolved_name": "Jalan Stapok, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
+        "resolved_name": "Lorong Stapok Selatan 11D7, Batu Kawah New Township, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
         "coordinates": [
-            1.5361585,
-            110.3302007
+            1.5286935,
+            110.3176102
         ],
         "snippet_text": "In the goods of Liew and Chio, pepper planters of Stapok.",
         "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
@@ -1829,28 +1745,6 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00080",
-        "historical_name": "Kampong Lintang",
-        "normalized_name": "Kampong Lintang",
-        "resolved_name": "Jalan Lintang, Pusar Ulak, Tamoi, Bandar Seri Begawan, Mukim Kianggeh, Brunei-Muara District, BA1411, Brunei",
-        "coordinates": [
-            4.8979639,
-            114.9398122
-        ],
-        "snippet_text": "A Malay named Bakar, in Kampong Lintang, found a mechanical contraption known as a Morrisso Lapanus and took it home.",
-        "source_metadata": "Gazette Vol 69, Issue 1031 (1939)",
-        "linked_entities": {
-            "PERSON": [
-                "Malay",
-                "Bakar"
-            ],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
         "location_id": "LOC_00042",
         "historical_name": "Sarawak",
         "normalized_name": "Sarawak",
@@ -2390,31 +2284,6 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00113",
-        "historical_name": "Seria",
-        "normalized_name": "Seria",
-        "resolved_name": "Seria, Mukim Seria, Belait District, Brunei",
-        "coordinates": [
-            4.6141594,
-            114.3301832
-        ],
-        "snippet_text": "Results of the 7th Round of the Johore Bahru Rifle Association Postal League were as follows: Kuching 48, Seria 597, J.B.R.A. 595, Selangor 579, Penang 79, and R.E.M.E. 343.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "7th"
-            ],
-            "ORGANISATION": [
-                "Johore Bahru Rifle Association Postal"
-            ],
-            "EVENT": [
-                "Round"
-            ]
-        },
-        "model_source": "LSTM"
-    },
-    {
         "location_id": "LOC_00042",
         "historical_name": "Sarawak",
         "normalized_name": "Sarawak",
@@ -2887,10 +2756,10 @@
         "location_id": "LOC_00123",
         "historical_name": "Kuching area",
         "normalized_name": "Kuching area",
-        "resolved_name": "Industrial area, Demak Laut, Kuching, Kuching Division, Sarawak, Malaysia",
+        "resolved_name": "Construction Industiral area, Demak Laut, Kuching, Kuching Division, Sarawak, Malaysia",
         "coordinates": [
-            1.5826279,
-            110.415957
+            1.5931402,
+            110.4073401
         ],
         "snippet_text": "A continuous day and night telephone service is now available for subscribers in the Kuching area.",
         "source_metadata": "Gazette Vol 91, Issue 1289 (1965)",
@@ -3393,8 +3262,8 @@
         "normalized_name": "Jalan Taman Budaya",
         "resolved_name": "Jalan Taman Budaya, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
         "coordinates": [
-            1.5533095,
-            110.3425936
+            1.5480876,
+            110.343285
         ],
         "snippet_text": "The Chinese Associations of Kuching and Samarahan organized a stage show at the Amphitheatre at Jalan Taman Budaya.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
@@ -3965,29 +3834,6 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00017",
-        "historical_name": "Limbang",
-        "normalized_name": "Limbang",
-        "resolved_name": "Limbang, Limbang Division, Sarawak, Malaysia",
-        "coordinates": [
-            4.3519985,
-            115.0602417
-        ],
-        "snippet_text": "The Public Works Department completed the road to Limbang this month.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "month"
-            ],
-            "ORGANISATION": [
-                "Public Works Department"
-            ],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
         "location_id": "LOC_00018",
         "historical_name": "Saratok",
         "normalized_name": "Saratok",
@@ -4076,27 +3922,6 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00021",
-        "historical_name": "Lawas",
-        "normalized_name": "Lawas",
-        "resolved_name": "Lawas, Limbang Division, Sarawak, Malaysia",
-        "coordinates": [
-            4.4551211,
-            115.427188
-        ],
-        "snippet_text": "A new school was established in Lawas in September.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "September"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
         "location_id": "LOC_00003",
         "historical_name": "Lundu",
         "normalized_name": "Lundu",
@@ -4179,27 +4004,6 @@
             "EVENT": [
                 "dinner"
             ]
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00023",
-        "historical_name": "Marudi",
-        "normalized_name": "Marudi",
-        "resolved_name": "Marudi, Miri Division, Sarawak, 98008, Malaysia",
-        "coordinates": [
-            4.1766125,
-            114.3604754
-        ],
-        "snippet_text": "On the 10th of April, the launch arrived at Marudi.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "10th of April"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
@@ -4841,10 +4645,10 @@
         "location_id": "LOC_00053",
         "historical_name": "Stapok",
         "normalized_name": "Stapok",
-        "resolved_name": "Jalan Stapok, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
+        "resolved_name": "Lorong Stapok Selatan 11D7, Batu Kawah New Township, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
         "coordinates": [
-            1.5361585,
-            110.3302007
+            1.5286935,
+            110.3176102
         ],
         "snippet_text": "In the goods of Liew and Chio, pepper planters of Stapok.",
         "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
@@ -5436,27 +5240,6 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00080",
-        "historical_name": "Kampong Lintang",
-        "normalized_name": "Kampong Lintang",
-        "resolved_name": "Jalan Lintang, Pusar Ulak, Tamoi, Bandar Seri Begawan, Mukim Kianggeh, Brunei-Muara District, BA1411, Brunei",
-        "coordinates": [
-            4.8979639,
-            114.9398122
-        ],
-        "snippet_text": "A Malay named Bakar, in Kampong Lintang, found a mechanical contraption known as a Morrisso Lapanus and took it home.",
-        "source_metadata": "Gazette Vol 69, Issue 1031 (1939)",
-        "linked_entities": {
-            "PERSON": [
-                "Bakar"
-            ],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
         "location_id": "LOC_00042",
         "historical_name": "Sarawak",
         "normalized_name": "Sarawak",
@@ -5945,8 +5728,8 @@
         "normalized_name": "Repok road",
         "resolved_name": "Repok Road, Bandar Sarikei, Sarikei, Sarikei Division, Sarawak, 96107, Malaysia",
         "coordinates": [
-            2.1291642,
-            111.5219804
+            2.1270623,
+            111.5205708
         ],
         "snippet_text": "A short call was made at Sarikei to inspect the Repok road, and the Zahora picked up a girl called Rose, a fine female orangutan kindly presented to Bako National Park by Mr. Ling Beng Siew of Sibu.",
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
@@ -6008,29 +5791,6 @@
         "coordinates": [
             1.5597561,
             110.345397
-        ],
-        "snippet_text": "Results of the 7th Round of the Johore Bahru Rifle Association Postal League were as follows: Kuching 48, Seria 597, J.B.R.A. 595, Selangor 579, Penang 79, and R.E.M.E. 343.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
-                "Johore Bahru Rifle Association Postal League"
-            ],
-            "EVENT": [
-                "7th Round"
-            ]
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00113",
-        "historical_name": "Seria",
-        "normalized_name": "Seria",
-        "resolved_name": "Seria, Mukim Seria, Belait District, Brunei",
-        "coordinates": [
-            4.6141594,
-            114.3301832
         ],
         "snippet_text": "Results of the 7th Round of the Johore Bahru Rifle Association Postal League were as follows: Kuching 48, Seria 597, J.B.R.A. 595, Selangor 579, Penang 79, and R.E.M.E. 343.",
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
@@ -7083,8 +6843,8 @@
         "normalized_name": "Jalan Taman Budaya",
         "resolved_name": "Jalan Taman Budaya, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
         "coordinates": [
-            1.5533095,
-            110.3425936
+            1.5480876,
+            110.343285
         ],
         "snippet_text": "The Chinese Associations of Kuching and Samarahan organized a stage show at the Amphitheatre at Jalan Taman Budaya.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",

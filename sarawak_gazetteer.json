@@ -64,31 +64,6 @@
     },
     {
         "location_id": "LOC_00004",
-        "historical_name": "Miri Recreation",
-        "normalized_name": "Miri Recreation",
-        "resolved_name": "Permaisuri Recreation Park Desa Murni, Desa Murni, Permyjaya, Miri, Miri Division, Sarawak, Malaysia",
-        "coordinates": [
-            4.4693184,
-            114.0467861
-        ],
-        "snippet_text": "On the 29th of December the new Miri Recreation Club was opened by the Managing Director of the British Malayan Petroleum Company, Mr. R. E. Hales.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [
-                "R. E. Hales"
-            ],
-            "DATE": [
-                "29th of December"
-            ],
-            "ORGANISATION": [
-                "Malayan Petroleum"
-            ],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00005",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -100,21 +75,22 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [
-                "W. L. Morrison"
+                "W. L. Morrison",
+                "Rajah"
             ],
             "DATE": [
-                "21st",
-                "January"
+                "Saturday",
+                "21st of January"
             ],
             "ORGANISATION": [
-                "Rajah Brooke"
+                "Brooke"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -125,7 +101,9 @@
         "snippet_text": "Professor Holttum visited Kuching in January 1949.",
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Holttum"
+            ],
             "DATE": [
                 "January 1949"
             ],
@@ -135,7 +113,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -158,7 +136,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -179,7 +157,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00011",
+        "location_id": "LOC_00010",
         "historical_name": "Mukah",
         "normalized_name": "Mukah",
         "resolved_name": "Mukah, Mukah Division, Sarawak, 96400, Malaysia",
@@ -200,7 +178,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00013",
+        "location_id": "LOC_00012",
         "historical_name": "Bintulu",
         "normalized_name": "Bintulu",
         "resolved_name": "Bintulu, Bintulu Division, Sarawak, 97000, Malaysia",
@@ -214,14 +192,16 @@
             "PERSON": [
                 "A. B. Ward"
             ],
-            "DATE": [],
+            "DATE": [
+                "week"
+            ],
             "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00014",
+        "location_id": "LOC_00013",
         "historical_name": "Serian",
         "normalized_name": "Serian",
         "resolved_name": "Serian, Serian Division, Sarawak, Malaysia",
@@ -242,7 +222,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00015",
+        "location_id": "LOC_00014",
         "historical_name": "Kapit",
         "normalized_name": "Kapit",
         "resolved_name": "Kapit, Kapit Division, Sarawak, 96800, Malaysia",
@@ -261,7 +241,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00016",
+        "location_id": "LOC_00015",
         "historical_name": "Betong",
         "normalized_name": "Betong",
         "resolved_name": "Betong, Betong Division, Sarawak, 95600, Malaysia",
@@ -284,7 +264,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -300,12 +280,14 @@
             "ORGANISATION": [
                 "Sarawak Constabulary"
             ],
-            "EVENT": []
+            "EVENT": [
+                "parade"
+            ]
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00018",
+        "location_id": "LOC_00017",
         "historical_name": "Limbang",
         "normalized_name": "Limbang",
         "resolved_name": "Limbang, Limbang Division, Sarawak, Malaysia",
@@ -318,13 +300,15 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Department"
+            ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00019",
+        "location_id": "LOC_00018",
         "historical_name": "Saratok",
         "normalized_name": "Saratok",
         "resolved_name": "Saratok, Betong Division, Sarawak, Malaysia",
@@ -347,7 +331,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00020",
+        "location_id": "LOC_00019",
         "historical_name": "Belaga",
         "normalized_name": "Belaga",
         "resolved_name": "Belaga, Kapit Division, Sarawak, 96950, Malaysia",
@@ -368,7 +352,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00021",
+        "location_id": "LOC_00020",
         "historical_name": "Miri",
         "normalized_name": "Miri",
         "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
@@ -381,7 +365,7 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
-                "1st of"
+                "1st of May"
             ],
             "ORGANISATION": [],
             "EVENT": []
@@ -389,7 +373,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00021",
+        "location_id": "LOC_00020",
         "historical_name": "Miri",
         "normalized_name": "Miri",
         "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
@@ -405,14 +389,14 @@
                 "1951"
             ],
             "ORGANISATION": [
-                "Sarawak Oilfields"
+                "Sarawak Oilfields Limited"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00022",
+        "location_id": "LOC_00021",
         "historical_name": "Lawas",
         "normalized_name": "Lawas",
         "resolved_name": "Lawas, Limbang Division, Sarawak, Malaysia",
@@ -452,7 +436,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -473,7 +457,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00023",
+        "location_id": "LOC_00022",
         "historical_name": "Sarikei",
         "normalized_name": "Sarikei",
         "resolved_name": "Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -494,7 +478,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -508,14 +492,16 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [
-                "Chinese Chamber"
+                "Chinese Chamber of Commerce"
             ],
-            "EVENT": []
+            "EVENT": [
+                "dinner"
+            ]
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00024",
+        "location_id": "LOC_00023",
         "historical_name": "Marudi",
         "normalized_name": "Marudi",
         "resolved_name": "Marudi, Miri Division, Sarawak, 98008, Malaysia",
@@ -531,14 +517,12 @@
                 "10th of April"
             ],
             "ORGANISATION": [],
-            "EVENT": [
-                "launch"
-            ]
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00025",
+        "location_id": "LOC_00024",
         "historical_name": "Tatau",
         "normalized_name": "Tatau",
         "resolved_name": "Tatau, Bintulu Division, Sarawak, 97200, Malaysia",
@@ -561,7 +545,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00026",
+        "location_id": "LOC_00025",
         "historical_name": "Simunjan",
         "normalized_name": "Simunjan",
         "resolved_name": "Simunjan, Samarahan Division, Sarawak, 94800, Malaysia",
@@ -582,7 +566,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00027",
+        "location_id": "LOC_00026",
         "historical_name": "Tebedu",
         "normalized_name": "Tebedu",
         "resolved_name": "Tebedu, Serian Division, Sarawak, Malaysia",
@@ -603,7 +587,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00015",
+        "location_id": "LOC_00014",
         "historical_name": "Kapit",
         "normalized_name": "Kapit",
         "resolved_name": "Kapit, Kapit Division, Sarawak, 96800, Malaysia",
@@ -624,7 +608,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00013",
+        "location_id": "LOC_00012",
         "historical_name": "Bintulu",
         "normalized_name": "Bintulu",
         "resolved_name": "Bintulu, Bintulu Division, Sarawak, 97000, Malaysia",
@@ -638,14 +622,14 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [
-                "Borneo Company"
+                "Borneo Company Limited"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00019",
+        "location_id": "LOC_00018",
         "historical_name": "Saratok",
         "normalized_name": "Saratok",
         "resolved_name": "Saratok, Betong Division, Sarawak, Malaysia",
@@ -666,7 +650,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00011",
+        "location_id": "LOC_00010",
         "historical_name": "Mukah",
         "normalized_name": "Mukah",
         "resolved_name": "Mukah, Mukah Division, Sarawak, 96400, Malaysia",
@@ -687,6 +671,27 @@
         "model_source": "LSTM"
     },
     {
+        "location_id": "LOC_00028",
+        "historical_name": "Miri Hospital",
+        "normalized_name": "Miri Hospital",
+        "resolved_name": "Miri Hospital (new block), 523, Lopeng, Miri, Miri Division, Sarawak, 98000, Malaysia",
+        "coordinates": [
+            4.3763923,
+            114.0025618
+        ],
+        "snippet_text": "The Miri Hospital admitted fifty patients in June.",
+        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [
+                "June"
+            ],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "LSTM"
+    },
+    {
         "location_id": "LOC_00029",
         "historical_name": "Binatang",
         "normalized_name": "Bintangor",
@@ -699,7 +704,9 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "Tuesday"
+            ],
             "ORGANISATION": [],
             "EVENT": []
         },
@@ -750,7 +757,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00014",
+        "location_id": "LOC_00013",
         "historical_name": "Serian",
         "normalized_name": "Serian",
         "resolved_name": "Serian, Serian Division, Sarawak, Malaysia",
@@ -765,13 +772,15 @@
             "DATE": [
                 "December"
             ],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Office"
+            ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -786,13 +795,15 @@
             "DATE": [
                 "5th of March"
             ],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "committee"
+            ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -803,38 +814,21 @@
         "snippet_text": "Mr. White visited the rubber estates in Bau last week.",
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00005",
-        "historical_name": "Kuching",
-        "normalized_name": "Kuching",
-        "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
-        "coordinates": [
-            1.5597561,
-            110.345397
-        ],
-        "snippet_text": "The Kuching Boat Club held a regatta in September 1954.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "White"
+            ],
             "DATE": [
-                "September 1954"
+                "week"
             ],
             "ORGANISATION": [
-                "Boat Club"
+                "rubber"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00021",
+        "location_id": "LOC_00020",
         "historical_name": "Miri",
         "normalized_name": "Miri",
         "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
@@ -857,28 +851,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
-        "historical_name": "Sibu",
-        "normalized_name": "Sibu",
-        "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
-        "coordinates": [
-            2.2996601,
-            111.8710012
-        ],
-        "snippet_text": "The Sibu Urban District Council approved the budget in November.",
-        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "November"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -899,7 +872,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00014",
+        "location_id": "LOC_00013",
         "historical_name": "Serian",
         "normalized_name": "Serian",
         "resolved_name": "Serian, Serian Division, Sarawak, Malaysia",
@@ -920,7 +893,26 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00037",
+        "historical_name": "Seniawan",
+        "normalized_name": "Siniawan",
+        "resolved_name": "Siniawan, Bau, Kuching Division, Sarawak, Malaysia",
+        "coordinates": [
+            1.4463323,
+            110.2195741
+        ],
+        "snippet_text": "Telephone extensions have been made from Buso to Seniawan and duplicate line running to Bau and Paku",
+        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "LSTM"
+    },
+    {
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -939,7 +931,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00038",
+        "location_id": "LOC_00039",
         "historical_name": "Batu Kawa",
         "normalized_name": "Batu Kawah",
         "resolved_name": "Batu Kawa Recreational Park, Batu Kawah New Township, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -958,7 +950,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -977,7 +969,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00039",
+        "location_id": "LOC_00040",
         "historical_name": "Sungei Tengah",
         "normalized_name": "Sungai Tengah",
         "resolved_name": "Sungai Tengah, Batu Kawa, Kuching, Kuching Division, Sarawak, Malaysia",
@@ -1000,7 +992,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1018,7 +1010,8 @@
                 "5th November 1906"
             ],
             "ORGANISATION": [
-                "opened"
+                "opened",
+                "Club"
             ],
             "EVENT": []
         },
@@ -1039,7 +1032,7 @@
             "PERSON": [
                 "P. M. Bingley",
                 "Bul Hassan",
-                "Datu Bandar",
+                "Bandar",
                 "Amin",
                 "Imaum",
                 "Hj",
@@ -1047,14 +1040,14 @@
             ],
             "DATE": [],
             "ORGANISATION": [
-                "Service"
+                "Government Service"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -1068,7 +1061,7 @@
             "PERSON": [
                 "P. M. Bingley",
                 "Bul Hassan",
-                "Datu Bandar",
+                "Bandar",
                 "Amin",
                 "Imaum",
                 "Hj",
@@ -1076,32 +1069,8 @@
             ],
             "DATE": [],
             "ORGANISATION": [
-                "Service"
+                "Government Service"
             ],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Sultan of Brunei also died on the 10th May, and Mr. Bettington who retired on pension two years ago died in Paris on the 10th November",
-        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
-        "linked_entities": {
-            "PERSON": [
-                "Bettington"
-            ],
-            "DATE": [
-                "10th May",
-                "10th November"
-            ],
-            "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "LSTM"
@@ -1118,18 +1087,19 @@
         "snippet_text": "The Governor of Straits Settlements has notified the Sarawak Government that it is his intention to shortly issue an order prohibiting the export of Straits dollars to all places except to Sarawak, British North Borneo and the Malay Peninsula",
         "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
         "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Malay Peninsula"
+            ],
             "DATE": [],
             "ORGANISATION": [
-                "Sarawak Government",
-                "Malay Peninsula"
+                "Sarawak Government"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau Bazaar",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -1141,7 +1111,8 @@
         "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
         "linked_entities": {
             "PERSON": [
-                "Lai Jew Ein",
+                "Lai",
+                "Ein",
                 "Mui Ho"
             ],
             "DATE": [],
@@ -1151,7 +1122,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00038",
+        "location_id": "LOC_00039",
         "historical_name": "Batu Kawa",
         "normalized_name": "Batu Kawah",
         "resolved_name": "Batu Kawa Recreational Park, Batu Kawah New Township, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1172,7 +1143,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00051",
+        "location_id": "LOC_00052",
         "historical_name": "Quop",
         "normalized_name": "Quop",
         "resolved_name": "Kampung Kuap, Kuching, Kuching Division, Sarawak, Malaysia",
@@ -1193,7 +1164,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00052",
+        "location_id": "LOC_00053",
         "historical_name": "Stapok",
         "normalized_name": "Stapok",
         "resolved_name": "Jalan Stapok, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1215,7 +1186,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -1236,6 +1207,30 @@
         "model_source": "LSTM"
     },
     {
+        "location_id": "LOC_00054",
+        "historical_name": "Penrissen",
+        "normalized_name": "Penrissen",
+        "resolved_name": "Gunung Penrissen, Kuching, Kuching Division, Sarawak, Malaysia",
+        "coordinates": [
+            1.1144787,
+            110.2228709
+        ],
+        "snippet_text": "In the goods of Chai Sin and Tsen Fatt, pepper planters of 7th mile Penrissen.",
+        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
+        "linked_entities": {
+            "PERSON": [
+                "Chai Sin",
+                "Tsen Fatt"
+            ],
+            "DATE": [
+                "7th"
+            ],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "LSTM"
+    },
+    {
         "location_id": "LOC_00042",
         "historical_name": "Sarawak",
         "normalized_name": "Sarawak",
@@ -1249,7 +1244,8 @@
         "linked_entities": {
             "PERSON": [
                 "Rajah",
-                "Stewart Hannibal McArthur"
+                "Malcolm Stewart Hannibal McArthur",
+                "Esq"
             ],
             "DATE": [],
             "ORGANISATION": [],
@@ -1258,7 +1254,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1295,15 +1291,14 @@
         "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
         "linked_entities": {
             "PERSON": [
+                "Rajah",
                 "Malcolm",
                 "Johnston"
             ],
             "DATE": [
                 "10th"
             ],
-            "ORGANISATION": [
-                "Rajah"
-            ],
+            "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "LSTM"
@@ -1331,7 +1326,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00013",
+        "location_id": "LOC_00012",
         "historical_name": "Bintulu",
         "normalized_name": "Bintulu",
         "resolved_name": "Bintulu, Bintulu Division, Sarawak, 97000, Malaysia",
@@ -1353,7 +1348,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00021",
+        "location_id": "LOC_00020",
         "historical_name": "Miri",
         "normalized_name": "Miri",
         "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
@@ -1375,7 +1370,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1448,7 +1443,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00060",
+        "location_id": "LOC_00062",
         "historical_name": "Judan",
         "normalized_name": "Judan",
         "resolved_name": "Judan, Mukah, Mukah Division, Sarawak, Malaysia",
@@ -1464,12 +1459,14 @@
             ],
             "DATE": [],
             "ORGANISATION": [],
-            "EVENT": []
+            "EVENT": [
+                "meeting"
+            ]
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1483,18 +1480,18 @@
             "PERSON": [
                 "Bryan"
             ],
-            "DATE": [
-                "Eve"
-            ],
+            "DATE": [],
             "ORGANISATION": [
                 "Borneo Company"
             ],
-            "EVENT": []
+            "EVENT": [
+                "Eve"
+            ]
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1510,16 +1507,15 @@
                 "1857"
             ],
             "ORGANISATION": [
+                "Kongsi",
                 "Chinese insurrection"
             ],
-            "EVENT": [
-                "Kongsi"
-            ]
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00065",
+        "location_id": "LOC_00037",
         "historical_name": "Seniawan",
         "normalized_name": "Siniawan",
         "resolved_name": "Siniawan, Bau, Kuching Division, Sarawak, Malaysia",
@@ -1540,28 +1536,26 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
-        "historical_name": "Kuching",
-        "normalized_name": "Kuching",
-        "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
+        "location_id": "LOC_00067",
+        "historical_name": "Kuching Court",
+        "normalized_name": "Kuching Court",
+        "resolved_name": "Queen's Court Commercial Centre, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
         "coordinates": [
-            1.5597561,
-            110.345397
+            1.5277158,
+            110.361576
         ],
         "snippet_text": "He was subsequently sentenced by Kuching Court to six months imprisonment.",
         "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [
-                "months imprisonment"
-            ],
+            "DATE": [],
             "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1582,7 +1576,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1598,14 +1592,14 @@
                 "20th instant"
             ],
             "ORGANISATION": [
-                "Chinese"
+                "Chinese traders"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00068",
+        "location_id": "LOC_00070",
         "historical_name": "ulu Sadong",
         "normalized_name": "ulu Sadong",
         "resolved_name": "Kampung Jaie Ulu, Sadong Jaya, Asajaya, Samarahan Division, Sarawak, Malaysia",
@@ -1618,13 +1612,15 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Government"
+            ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1647,7 +1643,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1670,7 +1666,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1706,7 +1702,7 @@
         "source_metadata": "Gazette Vol 69, Issue 1031 (1939)",
         "linked_entities": {
             "PERSON": [
-                "Imam",
+                "Datu Imam",
                 "Haji Mohamidin bin Almerhum Abang Haji Noor"
             ],
             "DATE": [
@@ -1743,26 +1739,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "I am hoping to visit Brunei later this year and Kuching on the way back.",
-        "source_metadata": "Gazette Vol 69, Issue 1031 (1939)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1792,21 +1769,22 @@
         "snippet_text": "The Rajah of Sarawak is the supreme authority, but in practice he rules with the advice and assistance of two bodies, namely the Supreme Council and the Committee of Administration.",
         "source_metadata": "Gazette Vol 69, Issue 1031 (1939)",
         "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Rajah"
+            ],
             "DATE": [],
             "ORGANISATION": [
-                "Rajah",
-                "authority",
-                "Council",
-                "Committee",
-                "Administration"
+                "of",
+                "supreme authority",
+                "Supreme Council",
+                "Committee of Administration"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1822,10 +1800,10 @@
                 "1st",
                 "2nd July"
             ],
-            "ORGANISATION": [],
-            "EVENT": [
+            "ORGANISATION": [
                 "Relief Fund"
-            ]
+            ],
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
@@ -1851,7 +1829,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00079",
+        "location_id": "LOC_00080",
         "historical_name": "Kampong Lintang",
         "normalized_name": "Kampong Lintang",
         "resolved_name": "Jalan Lintang, Pusar Ulak, Tamoi, Bandar Seri Begawan, Mukim Kianggeh, Brunei-Muara District, BA1411, Brunei",
@@ -1889,14 +1867,15 @@
                 "1st January 1939"
             ],
             "ORGANISATION": [
-                "Rubber Restriction"
+                "Rubber",
+                "Scheme"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -1910,7 +1889,9 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [],
-            "EVENT": []
+            "EVENT": [
+                "Cup"
+            ]
         },
         "model_source": "LSTM"
     },
@@ -1934,73 +1915,6 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "Drafts were issued in Brunei Town this month by the Sultan, Sir Omar Ali Saifuddin, and the British Resident, Mr. J. O. Gilbert.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [
-                "Omar Ali Saifuddin",
-                "J. O. Gilbert"
-            ],
-            "DATE": [],
-            "ORGANISATION": [
-                "British"
-            ],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Executive Council will consist of the Sultan as President, seven ex-officio members, one member of the Legislative Council, and seven unofficial members elected from within their own ranks by District Councils in Brunei.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
-                "Council",
-                "Council"
-            ],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Legislative Council will become a Brunei law-making authority and its official language will be Malay.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
-                "Council"
-            ],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
         "location_id": "LOC_00042",
         "historical_name": "Sarawak",
         "normalized_name": "Sarawak",
@@ -2012,26 +1926,9 @@
         "snippet_text": "The Sultan would be guided by the Governor of Sarawak, who is also the High Commissioner for Brunei.",
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Sultan would be guided by the Governor of Sarawak, who is also the High Commissioner for Brunei.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Sultan"
+            ],
             "DATE": [],
             "ORGANISATION": [],
             "EVENT": []
@@ -2055,13 +1952,15 @@
                 "Dayang Hairuni binte Datu Abang Yan"
             ],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Bath"
+            ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2109,31 +2008,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00086",
-        "historical_name": "Borneo",
-        "normalized_name": "Borneo",
-        "resolved_name": "Borneo, Malaysia",
-        "coordinates": [
-            1.4297828,
-            113.7090522
-        ],
-        "snippet_text": "Sarawak again failed to displace North Borneo at the Inter-Territorial Athletic Championships held in Jesselton on Saturday, July 20th.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "Saturday",
-                "July 20th"
-            ],
-            "ORGANISATION": [],
-            "EVENT": [
-                "Athletic Championships"
-            ]
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00086",
+        "location_id": "LOC_00088",
         "historical_name": "Borneo",
         "normalized_name": "Borneo",
         "resolved_name": "Borneo, Malaysia",
@@ -2144,11 +2019,11 @@
         "snippet_text": "Official team placings in the Men's Section gave North Borneo 39 points and retention of the MacDonald Trophy, Sarawak 30 points, and Brunei 27 points.",
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
+            "PERSON": [
                 "MacDonald Trophy"
             ],
+            "DATE": [],
+            "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "LSTM"
@@ -2165,32 +2040,11 @@
         "snippet_text": "Official team placings in the Men's Section gave North Borneo 39 points and retention of the MacDonald Trophy, Sarawak 30 points, and Brunei 27 points.",
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
+            "PERSON": [
                 "MacDonald Trophy"
             ],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "Official team placings in the Men's Section gave North Borneo 39 points and retention of the MacDonald Trophy, Sarawak 30 points, and Brunei 27 points.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [
-                "MacDonald Trophy"
-            ],
+            "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "LSTM"
@@ -2211,6 +2065,7 @@
                 "Chua"
             ],
             "DATE": [
+                "11",
                 "6 inches"
             ],
             "ORGANISATION": [],
@@ -2231,10 +2086,12 @@
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
             "PERSON": [
-                "Lim"
+                "Peter Lim",
+                "Bernard Knight"
             ],
             "DATE": [
                 "march",
+                "Saturday",
                 "August 10th"
             ],
             "ORGANISATION": [],
@@ -2257,45 +2114,9 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00086",
-        "historical_name": "Borneo",
-        "normalized_name": "Borneo",
-        "resolved_name": "Borneo, Malaysia",
-        "coordinates": [
-            1.4297828,
-            113.7090522
-        ],
-        "snippet_text": "The meeting included Government representatives from Singapore, the Federation of Malaya, Sarawak, North Borneo, and Brunei.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The meeting included Government representatives from Singapore, the Federation of Malaya, Sarawak, North Borneo, and Brunei.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
+            "EVENT": [
+                "meeting"
+            ]
         },
         "model_source": "LSTM"
     },
@@ -2319,7 +2140,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00094",
+        "location_id": "LOC_00095",
         "historical_name": "Bako National Park",
         "normalized_name": "Bako National Park",
         "resolved_name": "Bako National Park, Kampung Selabat, Kuching, Kuching Division, Sarawak, Malaysia",
@@ -2338,7 +2159,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -2361,7 +2182,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00102",
+        "location_id": "LOC_00104",
         "historical_name": "Selalang",
         "normalized_name": "Selalang",
         "resolved_name": "Selalang, Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -2382,7 +2203,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00023",
+        "location_id": "LOC_00022",
         "historical_name": "Sarikei",
         "normalized_name": "Sarikei",
         "resolved_name": "Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -2401,15 +2222,15 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00104",
-        "historical_name": "Daro",
-        "normalized_name": "Daro",
-        "resolved_name": "Daro, Mukah Division, Sarawak, 96200, Malaysia",
+        "location_id": "LOC_00029",
+        "historical_name": "Binatang",
+        "normalized_name": "Bintangor",
+        "resolved_name": "Bintangor, Meradong, Sarikei Division, Sarawak, 96500, Malaysia",
         "coordinates": [
-            2.5139835,
-            111.432287
+            2.168437,
+            111.6360424
         ],
-        "snippet_text": "After a short call at the house of the Tua Kampong in Daro, the rain and wind started again.",
+        "snippet_text": "When the fishermen return they go up river to the more populous bazaars of Sarikei and Binatang.",
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
             "PERSON": [],
@@ -2420,7 +2241,28 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00105",
+        "historical_name": "Daro",
+        "normalized_name": "Daro",
+        "resolved_name": "Daro, Mukah Division, Sarawak, 96200, Malaysia",
+        "coordinates": [
+            2.5139835,
+            111.432287
+        ],
+        "snippet_text": "After a short call at the house of the Tua Kampong in Daro, the rain and wind started again.",
+        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
+        "linked_entities": {
+            "PERSON": [
+                "Tua Kampong"
+            ],
+            "DATE": [],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "LSTM"
+    },
+    {
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -2441,7 +2283,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -2462,7 +2304,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00023",
+        "location_id": "LOC_00022",
         "historical_name": "Sarikei",
         "normalized_name": "Sarikei",
         "resolved_name": "Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -2483,7 +2325,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -2504,7 +2346,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00109",
+        "location_id": "LOC_00110",
         "historical_name": "Jerijeh village",
         "normalized_name": "Jerijeh village",
         "resolved_name": "Kampung Jerijeh, Mukah Division, Sarawak, Malaysia",
@@ -2523,7 +2365,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2535,18 +2377,20 @@
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "7th"
+            ],
             "ORGANISATION": [
                 "Johore Bahru Rifle Association Postal"
             ],
             "EVENT": [
-                "7th Round"
+                "Round"
             ]
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00112",
+        "location_id": "LOC_00113",
         "historical_name": "Seria",
         "normalized_name": "Seria",
         "resolved_name": "Seria, Mukim Seria, Belait District, Brunei",
@@ -2558,12 +2402,14 @@
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "7th"
+            ],
             "ORGANISATION": [
                 "Johore Bahru Rifle Association Postal"
             ],
             "EVENT": [
-                "7th Round"
+                "Round"
             ]
         },
         "model_source": "LSTM"
@@ -2607,28 +2453,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "Under the proposed new Constitution, no one will be eligible for membership of any of the three Councils unless he is a Brunei or British subject and is over 25 years of age.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "25"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2654,7 +2479,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2691,7 +2516,7 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [
-                "University"
+                "University of Malaya"
             ],
             "EVENT": [
                 "Examinations"
@@ -2753,13 +2578,15 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "government"
+            ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2782,7 +2609,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2801,7 +2628,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2815,7 +2642,7 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [
-                "Borneo Company hill"
+                "Borneo Company"
             ],
             "EVENT": []
         },
@@ -2843,27 +2670,6 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Borneo Bulletin is available at most newsagents and booksellers in the State of Brunei and Sarawak.",
-        "source_metadata": "Gazette Vol 83, Issue 1193 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
-                "Borneo Bulletin"
-            ],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
         "location_id": "LOC_00042",
         "historical_name": "Sarawak",
         "normalized_name": "Sarawak",
@@ -2885,7 +2691,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2900,11 +2706,34 @@
             "DATE": [
                 "July 1965",
                 "Saturday",
-                "July 31",
-                "1965"
+                "July 31"
             ],
             "ORGANISATION": [
                 "Sarawak Gazette"
+            ],
+            "EVENT": []
+        },
+        "model_source": "LSTM"
+    },
+    {
+        "location_id": "LOC_00042",
+        "historical_name": "Sarawak",
+        "normalized_name": "Sarawak",
+        "resolved_name": "Sarawak, Malaysia",
+        "coordinates": [
+            2.5023855,
+            112.9547283
+        ],
+        "snippet_text": "A new schedule of business was assigned to the Chinese of Sarawak Agriculture Department on the 16th of June 1965.",
+        "source_metadata": "Gazette Vol 91, Issue 1289 (1965)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [
+                "16th of June 1965"
+            ],
+            "ORGANISATION": [
+                "Chinese",
+                "Agriculture Department"
             ],
             "EVENT": []
         },
@@ -2930,31 +2759,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00042",
-        "historical_name": "Sarawak",
-        "normalized_name": "Sarawak",
-        "resolved_name": "Sarawak, Malaysia",
-        "coordinates": [
-            2.5023855,
-            112.9547283
-        ],
-        "snippet_text": "The Sarakup Indu Dayak Sarawak hosted a tea party at the residence of its Secretary, Mrs. Susie Mackay.",
-        "source_metadata": "Gazette Vol 91, Issue 1289 (1965)",
-        "linked_entities": {
-            "PERSON": [
-                "Dayak",
-                "Susie Mackay"
-            ],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": [
-                "Indu"
-            ]
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -2976,7 +2781,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00023",
+        "location_id": "LOC_00022",
         "historical_name": "Sarikei District",
         "normalized_name": "Sarikei",
         "resolved_name": "Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -3016,7 +2821,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu District",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -3037,7 +2842,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3053,14 +2858,12 @@
                 "1965"
             ],
             "ORGANISATION": [],
-            "EVENT": [
-                "month"
-            ]
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -3076,20 +2879,18 @@
                 "1965"
             ],
             "ORGANISATION": [],
-            "EVENT": [
-                "month"
-            ]
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00121",
+        "location_id": "LOC_00123",
         "historical_name": "Kuching area",
         "normalized_name": "Kuching area",
-        "resolved_name": "Construction Industiral area, Demak Laut, Kuching, Kuching Division, Sarawak, Malaysia",
+        "resolved_name": "Industrial area, Demak Laut, Kuching, Kuching Division, Sarawak, Malaysia",
         "coordinates": [
-            1.5931402,
-            110.4073401
+            1.5826279,
+            110.415957
         ],
         "snippet_text": "A continuous day and night telephone service is now available for subscribers in the Kuching area.",
         "source_metadata": "Gazette Vol 91, Issue 1289 (1965)",
@@ -3121,7 +2922,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -3132,34 +2933,11 @@
         "snippet_text": "The youths of Sibu took the occasion to mark the birthday of the Yang di-Pertuan Agong.",
         "source_metadata": "Gazette Vol 91, Issue 1289 (1965)",
         "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Yang di-Pertuan Agong"
+            ],
             "DATE": [],
             "ORGANISATION": [],
-            "EVENT": [
-                "Yang di-Pertuan Agong"
-            ]
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00006",
-        "historical_name": "Sibu",
-        "normalized_name": "Sibu",
-        "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
-        "coordinates": [
-            2.2996601,
-            111.8710012
-        ],
-        "snippet_text": "The Sibu Water Board Annual Report for 1963 was officially presented to the council this month.",
-        "source_metadata": "Gazette Vol 91, Issue 1289 (1965)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "1963"
-            ],
-            "ORGANISATION": [
-                "Water Board"
-            ],
             "EVENT": []
         },
         "model_source": "LSTM"
@@ -3188,7 +2966,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3201,7 +2979,8 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
-                "June 1993"
+                "June 1993",
+                "thirty years"
             ],
             "ORGANISATION": [
                 "Sarawak Gazette"
@@ -3211,7 +2990,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3268,18 +3047,19 @@
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [
-                "Abang Haji Johari"
+                "Haji Johari"
             ],
             "DATE": [],
             "ORGANISATION": [
-                "Malaysia Technology Development Corporation"
+                "Malaysia",
+                "Development Corporation"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3298,7 +3078,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00019",
+        "location_id": "LOC_00018",
         "historical_name": "Saratok",
         "normalized_name": "Saratok",
         "resolved_name": "Saratok, Betong Division, Sarawak, Malaysia",
@@ -3319,7 +3099,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3338,13 +3118,13 @@
             ],
             "ORGANISATION": [],
             "EVENT": [
-                "anniversary dinner"
+                "dinner"
             ]
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3356,8 +3136,7 @@
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [
-                "Wong",
-                "Kai"
+                "Wong Soon Kai"
             ],
             "DATE": [
                 "Wednesday",
@@ -3371,7 +3150,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -3383,7 +3162,7 @@
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [
-                "Haji Satem"
+                "Adenan Haji Satem"
             ],
             "DATE": [],
             "ORGANISATION": [],
@@ -3392,7 +3171,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00011",
+        "location_id": "LOC_00010",
         "historical_name": "Mukah",
         "normalized_name": "Mukah",
         "resolved_name": "Mukah, Mukah Division, Sarawak, 96400, Malaysia",
@@ -3407,10 +3186,10 @@
                 "Leo Michael Toyad"
             ],
             "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": [
+            "ORGANISATION": [
                 "Kaul Festival"
-            ]
+            ],
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
@@ -3426,10 +3205,10 @@
         "snippet_text": "The Native Customary Laws Ordinance of 1955 provides the legal framework for the gazetting of native adat in Sarawak.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
-            "PERSON": [
-                "adat"
+            "PERSON": [],
+            "DATE": [
+                "1955"
             ],
-            "DATE": [],
             "ORGANISATION": [],
             "EVENT": []
         },
@@ -3459,7 +3238,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu Division",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -3480,7 +3259,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu District",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -3523,7 +3302,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -3535,6 +3314,8 @@
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [
+                "Malays",
+                "Undi",
                 "Jarom"
             ],
             "DATE": [],
@@ -3556,7 +3337,7 @@
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [
-                "Patinggi Abang Haji Abdillah"
+                "Datu Patinggi Abang Haji Abdillah"
             ],
             "DATE": [],
             "ORGANISATION": [],
@@ -3565,7 +3346,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3579,16 +3360,14 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [
-                "Chinese"
+                "Chinese Associations"
             ],
-            "EVENT": [
-                "Associations"
-            ]
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00130",
+        "location_id": "LOC_00132",
         "historical_name": "Samarahan",
         "normalized_name": "Samarahan",
         "resolved_name": "Samarahan, Samarahan Division, Sarawak, 94300, Malaysia",
@@ -3602,22 +3381,20 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [
-                "Chinese"
+                "Chinese Associations"
             ],
-            "EVENT": [
-                "Associations"
-            ]
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00132",
+        "location_id": "LOC_00134",
         "historical_name": "Jalan Taman Budaya",
         "normalized_name": "Jalan Taman Budaya",
         "resolved_name": "Jalan Taman Budaya, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
         "coordinates": [
-            1.5480876,
-            110.343285
+            1.5533095,
+            110.3425936
         ],
         "snippet_text": "The Chinese Associations of Kuching and Samarahan organized a stage show at the Amphitheatre at Jalan Taman Budaya.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
@@ -3625,16 +3402,14 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [
-                "Chinese"
+                "Chinese Associations"
             ],
-            "EVENT": [
-                "Associations"
-            ]
+            "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3647,30 +3422,8 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "LSTM"
-    },
-    {
-        "location_id": "LOC_00006",
-        "historical_name": "Sibu",
-        "normalized_name": "Sibu",
-        "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
-        "coordinates": [
-            2.2996601,
-            111.8710012
-        ],
-        "snippet_text": "The Sibu Water Board Annual Report for 1963 was reviewed alongside the Brooke Dockyard and Engineering Report.",
-        "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "1963"
-            ],
             "ORGANISATION": [
-                "Water Board",
-                "Brooke Dockyard"
+                "Force"
             ],
             "EVENT": []
         },
@@ -3691,15 +3444,15 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [
-                "Corporation",
-                "Scholarship Fund"
+                "Nichimen Corporation of",
+                "Forestry Scholarship Fund"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3711,21 +3464,22 @@
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [
-                "Abdul Taib Mahmud"
+                "Abdul Taib Mahmud",
+                "Taib Orphanage"
             ],
             "DATE": [
                 "Thursday",
                 "June 24"
             ],
             "ORGANISATION": [
-                "Laila Taib Orphanage"
+                "Laila"
             ],
             "EVENT": []
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00134",
+        "location_id": "LOC_00135",
         "historical_name": "UNIMAS",
         "normalized_name": "UNIMAS",
         "resolved_name": "Universiti Malaysia Sarawak, Jalan Datuk Mohamad Musa, Kampung Sigitin, Kota Samarahan, Samarahan, Samarahan Division, Sarawak, 94300, Malaysia",
@@ -3744,7 +3498,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00135",
+        "location_id": "LOC_00136",
         "historical_name": "Kota Samarahan",
         "normalized_name": "Kota Samarahan",
         "resolved_name": "Kota Samarahan, Samarahan, Samarahan Division, Sarawak, Malaysia",
@@ -3763,7 +3517,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3774,7 +3528,9 @@
         "snippet_text": "The Northern Territory Minister for Health, Mike Reed, visited Kuching to discuss collaborative research in fisheries.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Mike Reed"
+            ],
             "DATE": [],
             "ORGANISATION": [],
             "EVENT": []
@@ -3782,7 +3538,7 @@
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3824,13 +3580,13 @@
             ],
             "ORGANISATION": [],
             "EVENT": [
-                "cricket match"
+                "match"
             ]
         },
         "model_source": "LSTM"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3847,7 +3603,7 @@
             ],
             "ORGANISATION": [],
             "EVENT": [
-                "cricket match"
+                "match"
             ]
         },
         "model_source": "LSTM"
@@ -3940,7 +3696,33 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00020",
+        "historical_name": "Miri",
+        "normalized_name": "Miri",
+        "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
+        "coordinates": [
+            4.3940102,
+            113.9880199
+        ],
+        "snippet_text": "On the 29th of December the new Miri Recreation Club was opened by the Managing Director of the British Malayan Petroleum Company, Mr. R. E. Hales.",
+        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
+        "linked_entities": {
+            "PERSON": [
+                "R. E. Hales"
+            ],
+            "DATE": [
+                "29th of December"
+            ],
+            "ORGANISATION": [
+                "Recreation Club",
+                "British Malayan Petroleum"
+            ],
+            "EVENT": []
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3958,14 +3740,14 @@
                 "21st of January"
             ],
             "ORGANISATION": [
-                "T.S.M.V Rajah Brooke"
+                "Rajah Brooke"
             ],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -3988,7 +3770,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -4011,7 +3793,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -4032,7 +3814,28 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00011",
+        "location_id": "LOC_00140",
+        "historical_name": "Baram River",
+        "normalized_name": "Baram River",
+        "resolved_name": "Baram River, Malaysia",
+        "coordinates": [
+            3.6782341,
+            114.442842
+        ],
+        "snippet_text": "Dr. Leach completed his sociological survey of the Baram River area.",
+        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
+        "linked_entities": {
+            "PERSON": [
+                "Leach"
+            ],
+            "DATE": [],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00010",
         "historical_name": "Mukah",
         "normalized_name": "Mukah",
         "resolved_name": "Mukah, Mukah Division, Sarawak, 96400, Malaysia",
@@ -4053,7 +3856,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00013",
+        "location_id": "LOC_00012",
         "historical_name": "Bintulu",
         "normalized_name": "Bintulu",
         "resolved_name": "Bintulu, Bintulu Division, Sarawak, 97000, Malaysia",
@@ -4067,14 +3870,16 @@
             "PERSON": [
                 "A. B. Ward"
             ],
-            "DATE": [],
+            "DATE": [
+                "week"
+            ],
             "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00014",
+        "location_id": "LOC_00013",
         "historical_name": "Serian",
         "normalized_name": "Serian",
         "resolved_name": "Serian, Serian Division, Sarawak, Malaysia",
@@ -4095,7 +3900,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00015",
+        "location_id": "LOC_00014",
         "historical_name": "Kapit",
         "normalized_name": "Kapit",
         "resolved_name": "Kapit, Kapit Division, Sarawak, 96800, Malaysia",
@@ -4116,7 +3921,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00016",
+        "location_id": "LOC_00015",
         "historical_name": "Betong",
         "normalized_name": "Betong",
         "resolved_name": "Betong, Betong Division, Sarawak, 95600, Malaysia",
@@ -4128,14 +3933,16 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "Sunday"
+            ],
             "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -4158,7 +3965,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00018",
+        "location_id": "LOC_00017",
         "historical_name": "Limbang",
         "normalized_name": "Limbang",
         "resolved_name": "Limbang, Limbang Division, Sarawak, Malaysia",
@@ -4170,7 +3977,9 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "month"
+            ],
             "ORGANISATION": [
                 "Public Works Department"
             ],
@@ -4179,7 +3988,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00019",
+        "location_id": "LOC_00018",
         "historical_name": "Saratok",
         "normalized_name": "Saratok",
         "resolved_name": "Saratok, Betong Division, Sarawak, Malaysia",
@@ -4202,7 +4011,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00020",
+        "location_id": "LOC_00019",
         "historical_name": "Belaga",
         "normalized_name": "Belaga",
         "resolved_name": "Belaga, Kapit Division, Sarawak, 96950, Malaysia",
@@ -4223,7 +4032,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00021",
+        "location_id": "LOC_00020",
         "historical_name": "Miri",
         "normalized_name": "Miri",
         "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
@@ -4244,7 +4053,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00021",
+        "location_id": "LOC_00020",
         "historical_name": "Miri",
         "normalized_name": "Miri",
         "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
@@ -4267,7 +4076,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00022",
+        "location_id": "LOC_00021",
         "historical_name": "Lawas",
         "normalized_name": "Lawas",
         "resolved_name": "Lawas, Limbang Division, Sarawak, Malaysia",
@@ -4280,7 +4089,7 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
-                "September."
+                "September"
             ],
             "ORGANISATION": [],
             "EVENT": []
@@ -4300,14 +4109,16 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "Friday"
+            ],
             "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -4328,7 +4139,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00023",
+        "location_id": "LOC_00022",
         "historical_name": "Sarikei",
         "normalized_name": "Sarikei",
         "resolved_name": "Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -4349,7 +4160,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -4372,7 +4183,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00024",
+        "location_id": "LOC_00023",
         "historical_name": "Marudi",
         "normalized_name": "Marudi",
         "resolved_name": "Marudi, Miri Division, Sarawak, 98008, Malaysia",
@@ -4393,7 +4204,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00025",
+        "location_id": "LOC_00024",
         "historical_name": "Tatau",
         "normalized_name": "Tatau",
         "resolved_name": "Tatau, Bintulu Division, Sarawak, 97200, Malaysia",
@@ -4405,7 +4216,9 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "month"
+            ],
             "ORGANISATION": [
                 "Agricultural Department"
             ],
@@ -4414,7 +4227,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00026",
+        "location_id": "LOC_00025",
         "historical_name": "Simunjan",
         "normalized_name": "Simunjan",
         "resolved_name": "Simunjan, Samarahan Division, Sarawak, 94800, Malaysia",
@@ -4428,14 +4241,16 @@
             "PERSON": [
                 "Richards"
             ],
-            "DATE": [],
+            "DATE": [
+                "two years"
+            ],
             "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00027",
+        "location_id": "LOC_00026",
         "historical_name": "Tebedu",
         "normalized_name": "Tebedu",
         "resolved_name": "Tebedu, Serian Division, Sarawak, Malaysia",
@@ -4458,7 +4273,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00015",
+        "location_id": "LOC_00014",
         "historical_name": "Kapit",
         "normalized_name": "Kapit",
         "resolved_name": "Kapit, Kapit Division, Sarawak, 96800, Malaysia",
@@ -4470,14 +4285,16 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "Wednesday"
+            ],
             "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00013",
+        "location_id": "LOC_00012",
         "historical_name": "Bintulu",
         "normalized_name": "Bintulu",
         "resolved_name": "Bintulu, Bintulu Division, Sarawak, 97000, Malaysia",
@@ -4498,7 +4315,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00011",
+        "location_id": "LOC_00010",
         "historical_name": "Mukah",
         "normalized_name": "Mukah",
         "resolved_name": "Mukah, Mukah Division, Sarawak, 96400, Malaysia",
@@ -4519,6 +4336,29 @@
         "model_source": "BiLSTM-CRF"
     },
     {
+        "location_id": "LOC_00020",
+        "historical_name": "Miri",
+        "normalized_name": "Miri",
+        "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
+        "coordinates": [
+            4.3940102,
+            113.9880199
+        ],
+        "snippet_text": "The Miri Hospital admitted fifty patients in June.",
+        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [
+                "June"
+            ],
+            "ORGANISATION": [
+                "Hospital"
+            ],
+            "EVENT": []
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
         "location_id": "LOC_00029",
         "historical_name": "Binatang",
         "normalized_name": "Bintangor",
@@ -4531,9 +4371,13 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "Tuesday"
+            ],
             "ORGANISATION": [],
-            "EVENT": []
+            "EVENT": [
+                "bazaar"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
@@ -4582,7 +4426,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00014",
+        "location_id": "LOC_00013",
         "historical_name": "Serian",
         "normalized_name": "Serian",
         "resolved_name": "Serian, Serian Division, Sarawak, Malaysia",
@@ -4595,7 +4439,7 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
-                "December."
+                "December"
             ],
             "ORGANISATION": [
                 "Information Office"
@@ -4605,7 +4449,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -4626,7 +4470,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -4638,16 +4482,41 @@
         "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
-                "rubber estates"
+            "DATE": [
+                "week"
             ],
+            "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00021",
+        "location_id": "LOC_00004",
+        "historical_name": "Kuching",
+        "normalized_name": "Kuching",
+        "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
+        "coordinates": [
+            1.5597561,
+            110.345397
+        ],
+        "snippet_text": "The Kuching Boat Club held a regatta in September 1954.",
+        "source_metadata": "Gazette Vol 82, Issue 1175 (1956)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [
+                "September 1954"
+            ],
+            "ORGANISATION": [
+                "Boat Club"
+            ],
+            "EVENT": [
+                "regatta"
+            ]
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00020",
         "historical_name": "Miri",
         "normalized_name": "Miri",
         "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
@@ -4661,14 +4530,16 @@
             "PERSON": [
                 "B. C. Lee"
             ],
-            "DATE": [],
+            "DATE": [
+                "Monday"
+            ],
             "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -4689,7 +4560,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00014",
+        "location_id": "LOC_00013",
         "historical_name": "Serian",
         "normalized_name": "Serian",
         "resolved_name": "Serian, Serian Division, Sarawak, Malaysia",
@@ -4710,7 +4581,26 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00037",
+        "historical_name": "Seniawan",
+        "normalized_name": "Siniawan",
+        "resolved_name": "Siniawan, Bau, Kuching Division, Sarawak, Malaysia",
+        "coordinates": [
+            1.4463323,
+            110.2195741
+        ],
+        "snippet_text": "Telephone extensions have been made from Buso to Seniawan and duplicate line running to Bau and Paku",
+        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -4729,7 +4619,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00038",
+        "location_id": "LOC_00039",
         "historical_name": "Batu Kawa",
         "normalized_name": "Batu Kawah",
         "resolved_name": "Batu Kawa Recreational Park, Batu Kawah New Township, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -4748,7 +4638,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -4767,30 +4657,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00039",
-        "historical_name": "Sungei Tengah",
-        "normalized_name": "Sungai Tengah",
-        "resolved_name": "Sungai Tengah, Batu Kawa, Kuching, Kuching Division, Sarawak, Malaysia",
-        "coordinates": [
-            1.5398174,
-            110.264992
-        ],
-        "snippet_text": "His Highness the Rajah has just granted a concession of land at Sungei Tengah for the purpose of rubber planting to Messrs. The Borneo Company, Limited",
-        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
-        "linked_entities": {
-            "PERSON": [
-                "Rajah"
-            ],
-            "DATE": [],
-            "ORGANISATION": [
-                "Borneo Company"
-            ],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00139",
+        "location_id": "LOC_00145",
         "historical_name": "Matang Water",
         "normalized_name": "Matang Water",
         "resolved_name": "Matang Water, Petra Jaya, Kampung Kolong 2, Kuching, Kuching Division, Sarawak, Malaysia",
@@ -4805,7 +4672,30 @@
                 "Grove"
             ],
             "DATE": [
-                "end of March"
+                "March"
+            ],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00004",
+        "historical_name": "Kuching",
+        "normalized_name": "Kuching",
+        "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
+        "coordinates": [
+            1.5597561,
+            110.345397
+        ],
+        "snippet_text": "His Highness the Rajah opened the new club called the Kuching Social Club on the 5th November 1906.",
+        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
+        "linked_entities": {
+            "PERSON": [
+                "Rajah"
+            ],
+            "DATE": [
+                "5th November 1906"
             ],
             "ORGANISATION": [],
             "EVENT": []
@@ -4838,7 +4728,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -4858,30 +4748,6 @@
             "ORGANISATION": [
                 "Government"
             ],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Sultan of Brunei also died on the 10th May, and Mr. Bettington who retired on pension two years ago died in Paris on the 10th November",
-        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
-        "linked_entities": {
-            "PERSON": [
-                "Bettington"
-            ],
-            "DATE": [
-                "10th May",
-                "10th November"
-            ],
-            "ORGANISATION": [],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
@@ -4908,7 +4774,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau Bazaar",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -4930,7 +4796,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00038",
+        "location_id": "LOC_00039",
         "historical_name": "Batu Kawa",
         "normalized_name": "Batu Kawah",
         "resolved_name": "Batu Kawa Recreational Park, Batu Kawah New Township, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -4951,7 +4817,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00051",
+        "location_id": "LOC_00052",
         "historical_name": "Quop",
         "normalized_name": "Quop",
         "resolved_name": "Kampung Kuap, Kuching, Kuching Division, Sarawak, Malaysia",
@@ -4972,7 +4838,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00052",
+        "location_id": "LOC_00053",
         "historical_name": "Stapok",
         "normalized_name": "Stapok",
         "resolved_name": "Jalan Stapok, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -4983,10 +4849,7 @@
         "snippet_text": "In the goods of Liew and Chio, pepper planters of Stapok.",
         "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
         "linked_entities": {
-            "PERSON": [
-                "Liew",
-                "Chio"
-            ],
+            "PERSON": [],
             "DATE": [],
             "ORGANISATION": [],
             "EVENT": []
@@ -4994,7 +4857,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -5038,7 +4901,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5110,7 +4973,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00013",
+        "location_id": "LOC_00012",
         "historical_name": "Bintulu",
         "normalized_name": "Bintulu",
         "resolved_name": "Bintulu, Bintulu Division, Sarawak, 97000, Malaysia",
@@ -5132,7 +4995,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00021",
+        "location_id": "LOC_00020",
         "historical_name": "Miri",
         "normalized_name": "Miri",
         "resolved_name": "Miri, Miri Division, Sarawak, 98000, Malaysia",
@@ -5154,7 +5017,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5193,6 +5056,7 @@
                 "Barker",
                 "Bruce Low",
                 "Schlechter",
+                "Messrs",
                 "Geikie",
                 "Johnston",
                 "Hastie"
@@ -5227,7 +5091,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00060",
+        "location_id": "LOC_00062",
         "historical_name": "Judan",
         "normalized_name": "Judan",
         "resolved_name": "Judan, Mukah, Mukah Division, Sarawak, Malaysia",
@@ -5250,30 +5114,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00060",
-        "historical_name": "Judan",
-        "normalized_name": "Judan",
-        "resolved_name": "Judan, Mukah, Mukah Division, Sarawak, Malaysia",
-        "coordinates": [
-            2.8887588,
-            112.001459
-        ],
-        "snippet_text": "Having found Tuah Kampong Bakal of Judan unsatisfactory, he has been dismissed and a meeting of the Judan people was held in the Fort and another appointed.",
-        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
-        "linked_entities": {
-            "PERSON": [
-                "Tuah Kampong Bakal"
-            ],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": [
-                "meeting"
-            ]
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5287,18 +5128,20 @@
             "PERSON": [
                 "Bryan"
             ],
-            "DATE": [],
+            "DATE": [
+                "Eve"
+            ],
             "ORGANISATION": [
                 "Borneo Company"
             ],
             "EVENT": [
-                "dinner"
+                "usual dinner"
             ]
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5323,7 +5166,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00065",
+        "location_id": "LOC_00037",
         "historical_name": "Seniawan",
         "normalized_name": "Siniawan",
         "resolved_name": "Siniawan, Bau, Kuching Division, Sarawak, Malaysia",
@@ -5344,28 +5187,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
-        "historical_name": "Kuching",
-        "normalized_name": "Kuching",
-        "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
-        "coordinates": [
-            1.5597561,
-            110.345397
-        ],
-        "snippet_text": "He was subsequently sentenced by Kuching Court to six months imprisonment.",
-        "source_metadata": "Gazette Vol 37, Issue 492 (1907)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "six months imprisonment"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5386,7 +5208,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5409,7 +5231,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00068",
+        "location_id": "LOC_00070",
         "historical_name": "ulu Sadong",
         "normalized_name": "ulu Sadong",
         "resolved_name": "Kampung Jaie Ulu, Sadong Jaya, Asajaya, Samarahan Division, Sarawak, Malaysia",
@@ -5430,7 +5252,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5453,7 +5275,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5476,7 +5298,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5491,6 +5313,7 @@
                 "K. H. Black"
             ],
             "DATE": [
+                "furlough",
                 "31st"
             ],
             "ORGANISATION": [],
@@ -5511,11 +5334,12 @@
         "source_metadata": "Gazette Vol 69, Issue 1031 (1939)",
         "linked_entities": {
             "PERSON": [
-                "Abang Haji Mohamidin bin Almerhum Abang Haji Noor"
+                "Abang Haji Mohamidin",
+                "Almerhum Abang Haji Noor"
             ],
             "DATE": [
-                "16th",
-                "July, 1939"
+                "16th July",
+                "1939"
             ],
             "ORGANISATION": [],
             "EVENT": []
@@ -5523,26 +5347,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "I am hoping to visit Brunei later this year and Kuching on the way back.",
-        "source_metadata": "Gazette Vol 69, Issue 1031 (1939)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5586,7 +5391,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5602,10 +5407,10 @@
                 "1st",
                 "2nd July"
             ],
-            "ORGANISATION": [
+            "ORGANISATION": [],
+            "EVENT": [
                 "Chinese Relief Fund Bazaar"
-            ],
-            "EVENT": []
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
@@ -5631,7 +5436,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00079",
+        "location_id": "LOC_00080",
         "historical_name": "Kampong Lintang",
         "normalized_name": "Kampong Lintang",
         "resolved_name": "Jalan Lintang, Pusar Ulak, Tamoi, Bandar Seri Begawan, Mukim Kianggeh, Brunei-Muara District, BA1411, Brunei",
@@ -5665,6 +5470,7 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
+                "five years",
                 "1st January 1939"
             ],
             "ORGANISATION": [
@@ -5675,7 +5481,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5688,7 +5494,10 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Depot",
+                "Depot"
+            ],
             "EVENT": [
                 "Challenge Cup"
             ]
@@ -5709,52 +5518,8 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "Drafts were issued in Brunei Town this month by the Sultan, Sir Omar Ali Saifuddin, and the British Resident, Mr. J. O. Gilbert.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [
-                "Omar Ali Saifuddin",
-                "J. O. Gilbert"
-            ],
-            "DATE": [
-                "month"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Executive Council will consist of the Sultan as President, seven ex-officio members, one member of the Legislative Council, and seven unofficial members elected from within their own ranks by District Councils in Brunei.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
             "ORGANISATION": [
-                "Executive Council",
-                "Legislative Council"
+                "Government"
             ],
             "EVENT": []
         },
@@ -5772,26 +5537,9 @@
         "snippet_text": "The Sultan would be guided by the Governor of Sarawak, who is also the High Commissioner for Brunei.",
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Sultan would be guided by the Governor of Sarawak, who is also the High Commissioner for Brunei.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Sultan"
+            ],
             "DATE": [],
             "ORGANISATION": [],
             "EVENT": []
@@ -5816,14 +5564,14 @@
             ],
             "DATE": [],
             "ORGANISATION": [
-                "Bath Training"
+                "City of Bath Training"
             ],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -5860,6 +5608,7 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
+                "Saturday",
                 "July 20th"
             ],
             "ORGANISATION": [],
@@ -5891,27 +5640,6 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "Official team placings in the Men's Section gave North Borneo 39 points and retention of the MacDonald Trophy, Sarawak 30 points, and Brunei 27 points.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": [
-                "MacDonald Trophy"
-            ]
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
         "location_id": "LOC_00042",
         "historical_name": "Sarawak",
         "normalized_name": "Sarawak",
@@ -5927,10 +5655,12 @@
                 "Joseph Chua"
             ],
             "DATE": [
-                "6 inches"
+                "11 feet 6 inches"
             ],
             "ORGANISATION": [],
-            "EVENT": []
+            "EVENT": [
+                "pole vault"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
@@ -5968,11 +5698,11 @@
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
             "PERSON": [
-                "Peter Lim",
-                "Bernard Knight"
+                "Peter Lim"
             ],
             "DATE": [
                 "march",
+                "Saturday",
                 "August 10th"
             ],
             "ORGANISATION": [],
@@ -5994,28 +5724,9 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": [
-                "meeting"
-            ]
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The meeting included Government representatives from Singapore, the Federation of Malaya, Sarawak, North Borneo, and Brunei.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Government"
+            ],
             "EVENT": [
                 "meeting"
             ]
@@ -6042,7 +5753,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00094",
+        "location_id": "LOC_00095",
         "historical_name": "Bako National Park",
         "normalized_name": "Bako National Park",
         "resolved_name": "Bako National Park, Kampung Selabat, Kuching, Kuching Division, Sarawak, Malaysia",
@@ -6061,7 +5772,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -6084,7 +5795,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00102",
+        "location_id": "LOC_00104",
         "historical_name": "Selalang",
         "normalized_name": "Selalang",
         "resolved_name": "Selalang, Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -6105,7 +5816,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00023",
+        "location_id": "LOC_00022",
         "historical_name": "Sarikei",
         "normalized_name": "Sarikei",
         "resolved_name": "Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -6124,7 +5835,26 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00104",
+        "location_id": "LOC_00029",
+        "historical_name": "Binatang",
+        "normalized_name": "Bintangor",
+        "resolved_name": "Bintangor, Meradong, Sarikei Division, Sarawak, 96500, Malaysia",
+        "coordinates": [
+            2.168437,
+            111.6360424
+        ],
+        "snippet_text": "When the fishermen return they go up river to the more populous bazaars of Sarikei and Binatang.",
+        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00105",
         "historical_name": "Daro",
         "normalized_name": "Daro",
         "resolved_name": "Daro, Mukah Division, Sarawak, 96200, Malaysia",
@@ -6143,7 +5873,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -6166,7 +5896,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -6189,7 +5919,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00023",
+        "location_id": "LOC_00022",
         "historical_name": "Sarikei",
         "normalized_name": "Sarikei",
         "resolved_name": "Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -6210,13 +5940,13 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00153",
+        "location_id": "LOC_00168",
         "historical_name": "Repok road",
         "normalized_name": "Repok road",
-        "resolved_name": "Repok Road, Sarikei, Sarikei Division, Sarawak, 96100, Malaysia",
+        "resolved_name": "Repok Road, Bandar Sarikei, Sarikei, Sarikei Division, Sarawak, 96107, Malaysia",
         "coordinates": [
-            2.1259521,
-            111.520171
+            2.1291642,
+            111.5219804
         ],
         "snippet_text": "A short call was made at Sarikei to inspect the Repok road, and the Zahora picked up a girl called Rose, a fine female orangutan kindly presented to Bako National Park by Mr. Ling Beng Siew of Sibu.",
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
@@ -6231,28 +5961,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00094",
-        "historical_name": "Bako National Park",
-        "normalized_name": "Bako National Park",
-        "resolved_name": "Bako National Park, Kampung Selabat, Kuching, Kuching Division, Sarawak, Malaysia",
-        "coordinates": [
-            1.7207096,
-            110.4784001
-        ],
-        "snippet_text": "A short call was made at Sarikei to inspect the Repok road, and the Zahora picked up a girl called Rose, a fine female orangutan kindly presented to Bako National Park by Mr. Ling Beng Siew of Sibu.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [
-                "Ling Beng Siew"
-            ],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -6273,7 +5982,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00109",
+        "location_id": "LOC_00110",
         "historical_name": "Jerijeh village",
         "normalized_name": "Jerijeh village",
         "resolved_name": "Kampung Jerijeh, Mukah Division, Sarawak, Malaysia",
@@ -6292,7 +6001,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6304,18 +6013,18 @@
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [
-                "7th Round"
-            ],
+            "DATE": [],
             "ORGANISATION": [
-                "Johore Bahru Rifle Association Postal"
+                "Johore Bahru Rifle Association Postal League"
             ],
-            "EVENT": []
+            "EVENT": [
+                "7th Round"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00112",
+        "location_id": "LOC_00113",
         "historical_name": "Seria",
         "normalized_name": "Seria",
         "resolved_name": "Seria, Mukim Seria, Belait District, Brunei",
@@ -6327,13 +6036,13 @@
         "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [
-                "7th Round"
-            ],
+            "DATE": [],
             "ORGANISATION": [
-                "Johore Bahru Rifle Association Postal"
+                "Johore Bahru Rifle Association Postal League"
             ],
-            "EVENT": []
+            "EVENT": [
+                "7th Round"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
@@ -6376,28 +6085,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "Under the proposed new Constitution, no one will be eligible for membership of any of the three Councils unless he is a Brunei or British subject and is over 25 years of age.",
-        "source_metadata": "Gazette Vol 83, Issue 1194 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [
-                "25 years"
-            ],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6411,7 +6099,7 @@
             "PERSON": [],
             "DATE": [
                 "July 1957",
-                "Wednesday,",
+                "Wednesday",
                 "July 31",
                 "1957"
             ],
@@ -6423,7 +6111,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6459,7 +6147,9 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "University of Malaya"
+            ],
             "EVENT": [
                 "Final Examinations"
             ]
@@ -6528,7 +6218,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6540,7 +6230,9 @@
         "source_metadata": "Gazette Vol 83, Issue 1193 (1957)",
         "linked_entities": {
             "PERSON": [],
-            "DATE": [],
+            "DATE": [
+                "month"
+            ],
             "ORGANISATION": [],
             "EVENT": [
                 "July Race Meeting"
@@ -6549,7 +6241,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6568,7 +6260,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6610,27 +6302,6 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00043",
-        "historical_name": "Brunei",
-        "normalized_name": "Brunei",
-        "resolved_name": "Brunei",
-        "coordinates": [
-            4.4137155,
-            114.5653908
-        ],
-        "snippet_text": "The Borneo Bulletin is available at most newsagents and booksellers in the State of Brunei and Sarawak.",
-        "source_metadata": "Gazette Vol 83, Issue 1193 (1957)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [
-                "Borneo Bulletin"
-            ],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
         "location_id": "LOC_00042",
         "historical_name": "Sarawak",
         "normalized_name": "Sarawak",
@@ -6652,7 +6323,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6666,8 +6337,9 @@
             "PERSON": [],
             "DATE": [
                 "July 1965",
-                "Saturday,",
-                "July 31"
+                "Saturday",
+                "July 31",
+                "1965"
             ],
             "ORGANISATION": [
                 "Sarawak Gazette"
@@ -6690,13 +6362,38 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Food and Agriculture Organisation"
+            ],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00042",
+        "historical_name": "Sarawak",
+        "normalized_name": "Sarawak",
+        "resolved_name": "Sarawak, Malaysia",
+        "coordinates": [
+            2.5023855,
+            112.9547283
+        ],
+        "snippet_text": "The Sarakup Indu Dayak Sarawak hosted a tea party at the residence of its Secretary, Mrs. Susie Mackay.",
+        "source_metadata": "Gazette Vol 91, Issue 1289 (1965)",
+        "linked_entities": {
+            "PERSON": [
+                "Mackay"
+            ],
+            "DATE": [],
+            "ORGANISATION": [],
+            "EVENT": [
+                "Sarakup Indu Dayak"
+            ]
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6718,7 +6415,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00023",
+        "location_id": "LOC_00022",
         "historical_name": "Sarikei District",
         "normalized_name": "Sarikei",
         "resolved_name": "Sarikei, Sarikei Division, Sarawak, Malaysia",
@@ -6753,12 +6450,14 @@
             "PERSON": [],
             "DATE": [],
             "ORGANISATION": [],
-            "EVENT": []
+            "EVENT": [
+                "lower primary school"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu District",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -6779,7 +6478,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6792,8 +6491,7 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
-                "month of",
-                "May 1965"
+                "month of May 1965"
             ],
             "ORGANISATION": [],
             "EVENT": []
@@ -6801,7 +6499,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -6814,8 +6512,7 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
-                "month of",
-                "May 1965"
+                "month of May 1965"
             ],
             "ORGANISATION": [],
             "EVENT": []
@@ -6823,7 +6520,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6861,7 +6558,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -6877,6 +6574,31 @@
             ],
             "DATE": [],
             "ORGANISATION": [],
+            "EVENT": [
+                "occasion"
+            ]
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00005",
+        "historical_name": "Sibu",
+        "normalized_name": "Sibu",
+        "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
+        "coordinates": [
+            2.2996601,
+            111.8710012
+        ],
+        "snippet_text": "The Sibu Water Board Annual Report for 1963 was officially presented to the council this month.",
+        "source_metadata": "Gazette Vol 91, Issue 1289 (1965)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [
+                "1963"
+            ],
+            "ORGANISATION": [
+                "Water Board"
+            ],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
@@ -6897,13 +6619,16 @@
             "DATE": [
                 "1962"
             ],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "medical and health",
+                "hospital services"
+            ],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6927,7 +6652,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -6940,7 +6665,8 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [
-                "April 2"
+                "Friday",
+                "April 2."
             ],
             "ORGANISATION": [
                 "Sarawak Timber Industry Development Corporation"
@@ -6994,7 +6720,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7007,13 +6733,16 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Public Complaints Bureau",
+                "public service"
+            ],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00019",
+        "location_id": "LOC_00018",
         "historical_name": "Saratok",
         "normalized_name": "Saratok",
         "resolved_name": "Saratok, Betong Division, Sarawak, Malaysia",
@@ -7034,7 +6763,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7059,7 +6788,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7074,6 +6803,7 @@
                 "Wong Soon Kai"
             ],
             "DATE": [
+                "Wednesday",
                 "April 14"
             ],
             "ORGANISATION": [],
@@ -7084,7 +6814,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00009",
+        "location_id": "LOC_00008",
         "historical_name": "Bau",
         "normalized_name": "Bau",
         "resolved_name": "Bau, Kuching Division, Sarawak, 94000, Malaysia",
@@ -7107,7 +6837,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00011",
+        "location_id": "LOC_00010",
         "historical_name": "Mukah",
         "normalized_name": "Mukah",
         "resolved_name": "Mukah, Mukah Division, Sarawak, 96400, Malaysia",
@@ -7141,9 +6871,7 @@
         "snippet_text": "The Native Customary Laws Ordinance of 1955 provides the legal framework for the gazetting of native adat in Sarawak.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
-            "PERSON": [
-                "adat"
-            ],
+            "PERSON": [],
             "DATE": [
                 "1955"
             ],
@@ -7168,7 +6896,8 @@
                 "Malay"
             ],
             "DATE": [
-                "1980"
+                "1980",
+                "257,504"
             ],
             "ORGANISATION": [],
             "EVENT": []
@@ -7176,8 +6905,29 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
-        "historical_name": "Sibu",
+        "location_id": "LOC_00176",
+        "historical_name": "Kuching-Samarahan Division",
+        "normalized_name": "Kuching-Samarahan",
+        "resolved_name": "Batang Samarahan, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
+        "coordinates": [
+            1.5464232,
+            110.498344
+        ],
+        "snippet_text": "The Kuching-Samarahan Division has the highest concentration of Malay residents, totaling 144,920 people.",
+        "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
+        "linked_entities": {
+            "PERSON": [
+                "Malay"
+            ],
+            "DATE": [],
+            "ORGANISATION": [],
+            "EVENT": []
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00005",
+        "historical_name": "Sibu Division",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
         "coordinates": [
@@ -7187,7 +6937,9 @@
         "snippet_text": "The Sibu Division contains 16,004 Malay residents, with the majority residing within the Sibu District.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Malay"
+            ],
             "DATE": [],
             "ORGANISATION": [],
             "EVENT": []
@@ -7195,7 +6947,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu District",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -7206,7 +6958,9 @@
         "snippet_text": "The Sibu Division contains 16,004 Malay residents, with the majority residing within the Sibu District.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
-            "PERSON": [],
+            "PERSON": [
+                "Malay"
+            ],
             "DATE": [],
             "ORGANISATION": [],
             "EVENT": []
@@ -7236,7 +6990,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00006",
+        "location_id": "LOC_00005",
         "historical_name": "Sibu",
         "normalized_name": "Sibu",
         "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
@@ -7248,7 +7002,9 @@
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [
-                "Datu Undi"
+                "Malays",
+                "Datu Undi",
+                "Jarom"
             ],
             "DATE": [],
             "ORGANISATION": [],
@@ -7269,16 +7025,18 @@
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [
-                "Abang Haji Abdillah"
+                "Datu Patinggi Abang Haji Abdillah"
             ],
             "DATE": [],
             "ORGANISATION": [],
-            "EVENT": []
+            "EVENT": [
+                "anti-cession movement"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7291,15 +7049,15 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [
-                "Chinese Associations"
-            ],
-            "EVENT": []
+            "ORGANISATION": [],
+            "EVENT": [
+                "stage show"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00130",
+        "location_id": "LOC_00132",
         "historical_name": "Samarahan",
         "normalized_name": "Samarahan",
         "resolved_name": "Samarahan, Samarahan Division, Sarawak, 94300, Malaysia",
@@ -7312,36 +7070,36 @@
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [
-                "Chinese Associations"
-            ],
-            "EVENT": []
+            "ORGANISATION": [],
+            "EVENT": [
+                "stage show"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00132",
+        "location_id": "LOC_00134",
         "historical_name": "Jalan Taman Budaya",
         "normalized_name": "Jalan Taman Budaya",
         "resolved_name": "Jalan Taman Budaya, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
         "coordinates": [
-            1.5480876,
-            110.343285
+            1.5533095,
+            110.3425936
         ],
         "snippet_text": "The Chinese Associations of Kuching and Samarahan organized a stage show at the Amphitheatre at Jalan Taman Budaya.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [
-                "Chinese Associations"
-            ],
-            "EVENT": []
+            "ORGANISATION": [],
+            "EVENT": [
+                "stage show"
+            ]
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7356,6 +7114,30 @@
             "DATE": [],
             "ORGANISATION": [
                 "Field Force"
+            ],
+            "EVENT": []
+        },
+        "model_source": "BiLSTM-CRF"
+    },
+    {
+        "location_id": "LOC_00005",
+        "historical_name": "Sibu",
+        "normalized_name": "Sibu",
+        "resolved_name": "Sibu, Sibu Division, Sarawak, 96000, Malaysia",
+        "coordinates": [
+            2.2996601,
+            111.8710012
+        ],
+        "snippet_text": "The Sibu Water Board Annual Report for 1963 was reviewed alongside the Brooke Dockyard and Engineering Report.",
+        "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
+        "linked_entities": {
+            "PERSON": [],
+            "DATE": [
+                "1963"
+            ],
+            "ORGANISATION": [
+                "Water Board",
+                "Brooke Dockyard"
             ],
             "EVENT": []
         },
@@ -7384,7 +7166,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7399,6 +7181,7 @@
                 "Abdul Taib Mahmud"
             ],
             "DATE": [
+                "Thursday",
                 "June 24"
             ],
             "ORGANISATION": [
@@ -7409,45 +7192,28 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00134",
-        "historical_name": "UNIMAS",
-        "normalized_name": "UNIMAS",
-        "resolved_name": "Universiti Malaysia Sarawak, Jalan Datuk Mohamad Musa, Kampung Sigitin, Kota Samarahan, Samarahan, Samarahan Division, Sarawak, 94300, Malaysia",
+        "location_id": "LOC_00132",
+        "historical_name": "Samarahan",
+        "normalized_name": "Samarahan",
+        "resolved_name": "Samarahan, Samarahan Division, Sarawak, 94300, Malaysia",
         "coordinates": [
-            1.4668506,
-            110.4331946
+            1.4329694,
+            110.4675931
         ],
         "snippet_text": "Local consultants were given priority to draw up the master plan for the UNIMAS site at Kota Samarahan.",
         "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
         "linked_entities": {
             "PERSON": [],
             "DATE": [],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "UNIMAS"
+            ],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00135",
-        "historical_name": "Kota Samarahan",
-        "normalized_name": "Kota Samarahan",
-        "resolved_name": "Kota Samarahan, Samarahan, Samarahan Division, Sarawak, Malaysia",
-        "coordinates": [
-            1.4636982,
-            110.4891268
-        ],
-        "snippet_text": "Local consultants were given priority to draw up the master plan for the UNIMAS site at Kota Samarahan.",
-        "source_metadata": "Gazette Vol 120, Issue 1524 (1993)",
-        "linked_entities": {
-            "PERSON": [],
-            "DATE": [],
-            "ORGANISATION": [],
-            "EVENT": []
-        },
-        "model_source": "BiLSTM-CRF"
-    },
-    {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7491,7 +7257,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7514,7 +7280,7 @@
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00157",
+        "location_id": "LOC_00182",
         "historical_name": "Fort Margherita",
         "normalized_name": "Fort Margherita",
         "resolved_name": "Fort Margherita, Jalan Tunku Abdul Rahman, Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7529,7 +7295,9 @@
             "DATE": [
                 "July"
             ],
-            "ORGANISATION": [],
+            "ORGANISATION": [
+                "Gazette"
+            ],
             "EVENT": []
         },
         "model_source": "BiLSTM-CRF"
@@ -7552,13 +7320,13 @@
             ],
             "ORGANISATION": [],
             "EVENT": [
-                "first recorded cricket match"
+                "cricket match"
             ]
         },
         "model_source": "BiLSTM-CRF"
     },
     {
-        "location_id": "LOC_00005",
+        "location_id": "LOC_00004",
         "historical_name": "Kuching",
         "normalized_name": "Kuching",
         "resolved_name": "Kuching, Kuching Division, Sarawak, 93000, Malaysia",
@@ -7575,7 +7343,7 @@
             ],
             "ORGANISATION": [],
             "EVENT": [
-                "first recorded cricket match"
+                "cricket match"
             ]
         },
         "model_source": "BiLSTM-CRF"
@@ -7596,7 +7364,8 @@
                 "Alexander Waddell"
             ],
             "DATE": [
-                "September 16, 1963"
+                "September 16",
+                "1963"
             ],
             "ORGANISATION": [],
             "EVENT": []

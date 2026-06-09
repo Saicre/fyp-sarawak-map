@@ -41,6 +41,19 @@ st.markdown("""
     background: radial-gradient(circle, rgba(56,189,248,0.08) 0%, transparent 70%);
     pointer-events: none;
 }
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+}
 .navbar-title {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 1.75em;
@@ -50,6 +63,12 @@ st.markdown("""
     line-height: 1.2;
     margin: 0;
 }
+.navbar-title-link {
+    color: #f0f6ff;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.navbar-title-link:hover { color: #38bdf8; }
 .navbar-subtitle {
     font-size: 0.82em;
     font-weight: 300;
@@ -70,6 +89,44 @@ st.markdown("""
     text-transform: uppercase;
     margin-left: 12px;
     vertical-align: middle;
+}
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+.navbar-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 6px 13px;
+    font-size: 0.78em;
+    font-weight: 500;
+    color: #94a3b8;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+.navbar-link-btn:hover {
+    background: rgba(56,189,248,0.08);
+    border-color: rgba(56,189,248,0.35);
+    color: #38bdf8;
+}
+
+/* ── MOBILE RESPONSIVENESS ── */
+@media (max-width: 768px) {
+    .navbar { padding: 16px 18px 14px; }
+    .navbar-title { font-size: 1.25em; }
+    .navbar-badge { display: none; }
+    .navbar-subtitle { font-size: 0.75em; }
+    .navbar-link-btn .link-label { display: none; }
+    .navbar-link-btn { padding: 6px 9px; }
+    .block-container { padding-left: 12px !important; padding-right: 12px !important; }
 }
 
 /* ── STAT CARDS ── */
@@ -316,14 +373,39 @@ div[data-testid="stRadio"] > label {
 # ── 3. NAVBAR ──────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="navbar">
-    <div style="display:flex; align-items:center; gap:14px;">
-        <div style="font-size:2.2em; line-height:1;">🗺️</div>
-        <div>
-            <p class="navbar-title">
-                Sarawak Gazette
-                <span class="navbar-badge">NLP · Gazetteer</span>
-            </p>
-            <p class="navbar-subtitle">Historical location extraction &amp; mapping · LSTM &amp; BiLSTM-CRF models</p>
+    <div class="navbar-inner">
+        <div class="navbar-left">
+            <div style="font-size:2.2em; line-height:1; flex-shrink:0;">🗺️</div>
+            <div>
+                <p class="navbar-title">
+                    <a class="navbar-title-link"
+                       href="https://www.pustaka-sarawak.com/gazette/home.php"
+                       target="_blank"
+                       title="Redirects you to the e-Sarawak Gazette">Sarawak Gazette</a>
+                    <span class="navbar-badge">NLP · Gazetteer</span>
+                </p>
+                <p class="navbar-subtitle">Historical location extraction &amp; mapping · LSTM &amp; BiLSTM-CRF models</p>
+            </div>
+        </div>
+        <div class="navbar-links">
+            <a class="navbar-link-btn"
+               href="https://www.pustaka-sarawak.com/gazette/home.php"
+               target="_blank"
+               title="Redirects you to the e-Sarawak Gazette">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+                <span class="link-label">e-Sarawak Gazette</span>
+            </a>
+            <a class="navbar-link-btn"
+               href="https://github.com/Saicre/fyp-sarawak-map"
+               target="_blank"
+               title="View source on GitHub">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span class="link-label">GitHub</span>
+            </a>
         </div>
     </div>
 </div>

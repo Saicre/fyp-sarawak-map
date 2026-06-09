@@ -352,7 +352,7 @@ div[data-testid="stRadio"] > label {
 }
 .map-frame iframe { display: block; }
 
-/* ── FOOTER ── */
+/* ── FOOTER (Modified for Approach 2) ── */
 .footer {
     text-align: center;
     padding: 18px;
@@ -360,7 +360,13 @@ div[data-testid="stRadio"] > label {
     color: #2d3748;
     letter-spacing: 0.3px;
     border-top: 1px solid rgba(255,255,255,0.04);
-    margin-top: 8px;
+    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #0d1117;
+    z-index: 100;
 }
 
 /* spacing helpers */
@@ -763,12 +769,12 @@ for (loc_id, model_src), records in grouped.items():
     ).add_to(m)
 
 
-# ── 8. RENDER ──────────────────────────────────────────────────────────────────
+# ── 8. RENDER (Modified for Approach 2) ────────────────────────────────────────
 st.markdown('<div class="map-frame">', unsafe_allow_html=True)
 st_folium(
     m,
     width=None,
-    height=640,
+    height=450,
     center=st.session_state.center,
     zoom=st.session_state.zoom,
     returned_objects=[],

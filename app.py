@@ -772,7 +772,7 @@ st.markdown('<div class="map-frame">', unsafe_allow_html=True)
 st_folium(
     m,
     width=None,   # width=None guarantees full responsiveness
-    height=640,   # Back to original height
+    height=750,   # Back to original height
     center=st.session_state.center,
     zoom=st.session_state.zoom,
     returned_objects=[],
